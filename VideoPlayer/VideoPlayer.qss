@@ -1,10 +1,49 @@
-QLabel
+/*
+Global theme for widgets
+*/
+QWidget
 {
-        font-size: 22px;
-        font-family: 'Hellvetica' 'Arial' sans-serif;
+    background-color: black;
 }
 
+/*
+Global theme for labels
+*/
+QLabel
+{
+    font-size: 18px;
+    font-family: 'Hellvetica' 'Arial' sans-serif;
+    color: white;
+}
+
+/*
+Theme for title of the app
+*/
 QLabel[objectName="title"]
 {
-        font-size: 36px;
+    font-size: 36px;
+}
+
+/*
+Global theme for buttons
+*/
+QPushButton
+{
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 18px;
+}
+
+/*
+Global theme for text inputs
+*/
+QLineEdit
+{
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 7px;
 }
