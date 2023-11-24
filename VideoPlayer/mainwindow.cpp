@@ -14,26 +14,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Instance login page
-    p_LoginPage = new LoginPage();
+    p_LoginPage = new LoginPage(nullptr, this);
     ui->LoginPage->layout()->addWidget(p_LoginPage);
     p_LoginPage->show();
 
     // Instance home page
-    p_HomePage = new HomePage();
+    p_HomePage = new HomePage(nullptr, this);
     ui->HomePage->layout()->addWidget(p_HomePage);
     p_HomePage->show();
 
     // Instance profile page
-    p_ProfilePage = new ProfilePage();
+    p_ProfilePage = new ProfilePage(nullptr, this);
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
-
-    // Connect Buttons
-    connect(p_LoginPage->GetLoginButton(), &QPushButton::clicked, this, &MainWindow::LoginButtonClicked);
-    connect(p_HomePage->GetProfileButton(), &QPushButton::clicked, this, &MainWindow::ProfileButtonClicked);
-    connect(p_HomePage->GetLogoutButton(), &QPushButton::clicked, this, &MainWindow::LogoutButtonClicked);
-    connect(p_ProfilePage->GetHomeButton(), &QPushButton::clicked, this, &MainWindow::ProfileHomeButtonClicked);
-
 }
 
 MainWindow::~MainWindow()
@@ -41,23 +34,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::LoginButtonClicked()
+void MainWindow::ChangePage(PageIndex page)
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(page);
 }
-
-void MainWindow::LogoutButtonClicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::ProfileHomeButtonClicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::ProfileButtonClicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
-

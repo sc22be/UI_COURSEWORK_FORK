@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class QPushButton;
+class MainWindow;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HomePage; }
@@ -13,14 +14,15 @@ class HomePage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HomePage(QWidget *parent = nullptr);
+    explicit HomePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~HomePage();
 
-    // Navigation button getters
-    const QPushButton* GetLogoutButton() const;
-    const QPushButton* GetProfileButton() const;
+public slots:
+    void LogoutButtonClicked();
+    void ProfileButtonClicked();
 
 private:
+    MainWindow* p_MainWindow;
     Ui::HomePage* ui;
 };
 

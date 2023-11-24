@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class QPushButton;
+class MainWindow;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ProfilePage; }
@@ -13,14 +14,15 @@ class ProfilePage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ProfilePage(QWidget *parent = nullptr);
+    explicit ProfilePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~ProfilePage();
 
-    // Button getters for connecting buttons
-    const QPushButton* GetHomeButton() const;
+public slots:
+
+    void HomeButtonClicked();
 
 private:
-
+    MainWindow* p_MainWindow;
     Ui::ProfilePage* ui;
 
 };
