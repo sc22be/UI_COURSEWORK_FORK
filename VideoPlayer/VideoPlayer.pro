@@ -12,12 +12,14 @@ SOURCES += \
     homepage.cpp \
     loginpage.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    profilepage.cpp
 
 HEADERS += \
     homepage.h \
     loginpage.h \
-    mainwindow.h
+    mainwindow.h \
+    profilepage.h
 
 FORMS += \
     homepage.ui \

@@ -16,7 +16,9 @@ public:
     explicit HomePage(QWidget *parent = nullptr);
     ~HomePage();
 
+    // Navigation button getters
     const QPushButton* GetLogoutButton() const;
+    const QPushButton* GetProfileButton() const;
 
 private:
     Ui::HomePage* ui;
