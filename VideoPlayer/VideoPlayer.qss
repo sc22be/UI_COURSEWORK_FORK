@@ -1,0 +1,10 @@
+QLabel
+{
+        font-size: 22px;
+        font-family: 'Hellvetica' 'Arial' sans-serif;
+}
+
+QLabel[objectName="title"]
+{
+        font-size: 36px;
+}
