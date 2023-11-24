@@ -13,12 +13,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Instance login page
-    p_LoginPage = new LoginPage(ui->LoginPage);
+    p_LoginPage = new LoginPage();
     ui->LoginPage->layout()->addWidget(p_LoginPage);
     p_LoginPage->show();
 
     // Instance home page
-    p_HomePage = new HomePage(ui->HomePage);
+    p_HomePage = new HomePage();
     ui->HomePage->layout()->addWidget(p_HomePage);
     p_HomePage->show();
 
