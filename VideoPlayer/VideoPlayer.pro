@@ -21,7 +21,7 @@ HEADERS += \
 
 FORMS += \
     homepage.ui \
-    loginform.ui \
+    loginpage.ui \
     mainwindow.ui \
     profile.ui
 

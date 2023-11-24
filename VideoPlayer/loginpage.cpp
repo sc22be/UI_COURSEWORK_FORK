@@ -1,5 +1,5 @@
 #include "loginpage.h"
-#include "ui_loginform.h"
+#include "ui_loginpage.h"
 
 LoginPage::LoginPage(QWidget *parent)
     : QWidget{parent}
