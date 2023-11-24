@@ -15,5 +15,10 @@ HomePage::~HomePage()
 
 const QPushButton *HomePage::GetLogoutButton() const
 {
-    return ui->pushButton;
+    return ui->button_Logout;
+}
+
+const QPushButton *HomePage::GetProfileButton() const
+{
+    return ui->button_Profile;
 }

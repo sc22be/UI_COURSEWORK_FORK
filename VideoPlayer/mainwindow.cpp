@@ -3,6 +3,7 @@
 
 #include "loginpage.h"
 #include "homepage.h"
+#include "profilepage.h"
 
 #include <QPushButton>
 
@@ -22,9 +23,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->HomePage->layout()->addWidget(p_HomePage);
     p_HomePage->show();
 
+    // Instance profile page
+    p_ProfilePage = new ProfilePage();
+    ui->ProfilePage->layout()->addWidget(p_ProfilePage);
+    p_ProfilePage->show();
+
     // Connect Buttons
     connect(p_LoginPage->GetLoginButton(), &QPushButton::clicked, this, &MainWindow::LoginButtonClicked);
+    connect(p_HomePage->GetProfileButton(), &QPushButton::clicked, this, &MainWindow::ProfileButtonClicked);
     connect(p_HomePage->GetLogoutButton(), &QPushButton::clicked, this, &MainWindow::LogoutButtonClicked);
+    connect(p_ProfilePage->GetHomeButton(), &QPushButton::clicked, this, &MainWindow::ProfileHomeButtonClicked);
 
 }
 
@@ -41,5 +49,15 @@ void MainWindow::LoginButtonClicked()
 void MainWindow::LogoutButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::ProfileHomeButtonClicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::ProfileButtonClicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
