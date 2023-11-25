@@ -1,9 +1,9 @@
-
 # COMMITING
 
 **Lets not commit our branches randomly without a plan**
+**And also lets not merge our pull requests immedietly**
 
-You should create a branch using ```git branch new_branch_name``` (make sure you git checkout new_branch to change the active branch to your new one) and commit your progress there. Once you are ready to merge your branch create a pull request by either:
+To get a local copy of the repo, run ```git clone git@github.com:sc22my/UI_COURSEWORK.git```. You should create a branch using ```git branch new_branch_name``` (make sure you git checkout new_branch to change the active branch to your new one) and commit your progress there. Once you are ready to merge your branch create a pull request by either:
 * Using gitub app or cli: ```gh pr create```.
 * Push your branch to the repo and create a pull request on github website.
 
