@@ -1,6 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 #include <QMainWindow>
 
 // Forward declare pages

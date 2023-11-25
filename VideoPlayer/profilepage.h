@@ -1,6 +1,11 @@
 #ifndef PROFILEPAGE_H
 #define PROFILEPAGE_H
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 #include <QWidget>
 
 class QPushButton;

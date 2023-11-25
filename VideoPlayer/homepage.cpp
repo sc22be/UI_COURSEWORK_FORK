@@ -1,6 +1,11 @@
 #include "homepage.h"
 #include "ui_homepage.h"
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 HomePage::HomePage(QWidget *parent)
     : QWidget{parent}
     , ui(new Ui::HomePage())
