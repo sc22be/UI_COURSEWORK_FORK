@@ -3,6 +3,11 @@
 #include <QApplication>
 #include <QFile>
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

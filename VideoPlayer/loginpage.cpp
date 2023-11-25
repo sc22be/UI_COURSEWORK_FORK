@@ -1,6 +1,11 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 LoginPage::LoginPage(QWidget *parent)
     : QWidget{parent}
     , ui(new Ui::LoginPage())
