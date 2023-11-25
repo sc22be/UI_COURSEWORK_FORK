@@ -3,6 +3,11 @@
 
 #include "mainwindow.h"
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
     , p_MainWindow(main_window)

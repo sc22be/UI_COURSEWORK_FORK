@@ -3,8 +3,12 @@
 #include "mainwindow.h"
 
 #include <QPushButton>
-
 #include <iostream>
+
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
 
 LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}

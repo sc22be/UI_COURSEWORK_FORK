@@ -1,6 +1,11 @@
 #ifndef LOGINPAGE_H
 #define LOGINPAGE_H
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 #include <QWidget>
 
 class QPushButton;

@@ -2,6 +2,11 @@
 #include "ui_profile.h"
 #include "mainwindow.h"
 
+/**
+ * @author Mustafa Yozgyur
+ * @author ...
+*/
+
 ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
     , p_MainWindow(main_window)
