@@ -1,16 +1,22 @@
 #include "homepage.h"
 #include "ui_homepage.h"
 
+#include "mainwindow.h"
+
 /**
  * @author Mustafa Yozgyur
  * @author ...
 */
 
-HomePage::HomePage(QWidget *parent)
+HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
+    , p_MainWindow(main_window)
     , ui(new Ui::HomePage())
 {
     ui->setupUi(this);
+
+    connect(ui->button_Logout, &QPushButton::clicked, this, &HomePage::LogoutButtonClicked);
+    connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
 }
 
 HomePage::~HomePage()
@@ -18,12 +24,16 @@ HomePage::~HomePage()
     delete ui;
 }
 
-const QPushButton *HomePage::GetLogoutButton() const
+void HomePage::LogoutButtonClicked()
 {
-    return ui->button_Logout;
+    // Clear session token and auth token etc...
+
+    // Switch pages
+    p_MainWindow->ChangePage(MainWindow::PageIndex::LOGIN_PAGE);
 }
 
-const QPushButton *HomePage::GetProfileButton() const
+void HomePage::ProfileButtonClicked()
 {
-    return ui->button_Profile;
+    // Switch pages
+    p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
 }

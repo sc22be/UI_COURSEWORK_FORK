@@ -1,16 +1,20 @@
 #include "profilepage.h"
 #include "ui_profile.h"
+#include "mainwindow.h"
 
 /**
  * @author Mustafa Yozgyur
  * @author ...
 */
 
-ProfilePage::ProfilePage(QWidget *parent)
+ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
+    , p_MainWindow(main_window)
     , ui(new Ui::ProfilePage())
 {
     ui->setupUi(this);
+
+    connect(ui->button_HomePage, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
 }
 
 ProfilePage::~ProfilePage()
@@ -18,7 +22,7 @@ ProfilePage::~ProfilePage()
     delete ui;
 }
 
-const QPushButton *ProfilePage::GetHomeButton() const
+void ProfilePage::HomeButtonClicked()
 {
-    return ui->button_HomePage;
+    p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
 }

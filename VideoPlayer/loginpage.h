@@ -9,6 +9,7 @@
 #include <QWidget>
 
 class QPushButton;
+class MainWindow;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginPage; }
@@ -18,13 +19,14 @@ class LoginPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit LoginPage(QWidget *parent = nullptr);
+    explicit LoginPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~LoginPage();
 
-    // Login button getter
-    const QPushButton* GetLoginButton() const;
+private slots:
+    void LoginButtonClicked();
 
 private:
+    MainWindow* p_MainWindow;
     Ui::LoginPage* ui;
 };
 

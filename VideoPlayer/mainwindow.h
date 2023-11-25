@@ -28,6 +28,20 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    // Indicies of pages in stackedWidget
+    enum PageIndex
+    {
+        HOME_PAGE = 0,
+        LOGIN_PAGE = 1,
+        PROFILE_PAGE = 2
+    };
+
+    /**
+     * Changes the currently displayed page
+     * @param page : PageIndex of what page to change to
+    */
+    void ChangePage(PageIndex page);
+
 private:
     Ui::MainWindow *ui;
 
@@ -35,14 +49,6 @@ private:
     LoginPage* p_LoginPage;
     HomePage* p_HomePage;
     ProfilePage* p_ProfilePage;
-
-public slots:
-
-    // Handle navigation
-    void LoginButtonClicked();
-    void LogoutButtonClicked();
-    void ProfileHomeButtonClicked();
-    void ProfileButtonClicked();
 
 };
 #endif // MAINWINDOW_H
