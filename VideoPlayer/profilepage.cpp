@@ -1,5 +1,5 @@
 #include "profilepage.h"
-#include "ui_profile.h"
+#include "ui_profilepage.h"
 #include "mainwindow.h"
 
 /**
@@ -14,7 +14,7 @@ ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
 {
     ui->setupUi(this);
 
-    connect(ui->button_HomePage, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
+    connect(ui->backButton, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
 }
 
 ProfilePage::~ProfilePage()
