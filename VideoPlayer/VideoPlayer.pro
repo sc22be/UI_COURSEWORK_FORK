@@ -14,7 +14,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     profilepage.cpp \
-    registerpage.cpp \
     registerpage.cpp
 
 HEADERS += \
@@ -22,7 +21,6 @@ HEADERS += \
     loginpage.h \
     mainwindow.h \
     profilepage.h \
-    registerpage.h \
     registerpage.h
 
 FORMS += \
@@ -30,7 +28,6 @@ FORMS += \
     loginpage.ui \
     mainwindow.ui \
     profile.ui \
-    registerpage.ui \
     registerpage.ui
 
 # Default rules for deployment.
