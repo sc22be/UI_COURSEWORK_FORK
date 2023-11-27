@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>assets/VideoPlayer.qss</file>
-        <file>assets/button_images/profile_image.png</file>
+        <file>assets/button_images/profile_image.jpeg</file>
     </qresource>
 </RCC>
