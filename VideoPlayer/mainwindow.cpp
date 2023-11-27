@@ -5,7 +5,6 @@
 #include "homepage.h"
 #include "profilepage.h"
 #include "registerpage.h"
-#include "welcomepage.h"
 
 #include <QPushButton>
 
