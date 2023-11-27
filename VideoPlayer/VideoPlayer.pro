@@ -27,7 +27,7 @@ FORMS += \
     homepage.ui \
     loginpage.ui \
     mainwindow.ui \
-    profile.ui \
+    profilepage.ui \
     registerpage.ui
 
 # Default rules for deployment.
@@ -36,7 +36,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    VideoPlayer.qss
+    VideoPlayer.qss \
+    assets/button_images/leftArrow.jpg
 
 RESOURCES += \
     VideoPlayer.qrc
