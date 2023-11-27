@@ -57,3 +57,10 @@ QLineEdit
     color: white;
     padding: 7px;
 }
+
+QScrollArea
+{
+    border: 1px solid white;
+    margin-left: 0px;
+    margin-right: 0px;
+}
