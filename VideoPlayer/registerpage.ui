@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LoginPage</class>
- <widget class="QWidget" name="LoginPage">
+ <class>RegisterPage</class>
+ <widget class="QWidget" name="RegisterPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,13 +10,16 @@
     <height>584</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <spacer name="verticalSpacer_2">
      <property name="orientation">
@@ -25,7 +28,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>105</height>
       </size>
      </property>
     </spacer>
@@ -60,7 +63,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Log in to your account:</string>
+      <string>Create Your Account:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -70,7 +73,7 @@
    <item>
     <widget class="QWidget" name="widget" native="true">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -89,7 +92,21 @@
        <number>36</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="userLabel">
+        <property name="text">
+         <string>Username:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="text_Username">
+        <property name="class" stdset="0">
+         <string>logRegInput</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="emalLabel">
         <property name="text">
          <string>E-Mail:</string>
         </property>
@@ -109,20 +126,7 @@
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>10</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="passwordLabel">
         <property name="text">
          <string>Password:</string>
         </property>
@@ -143,9 +147,6 @@
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
@@ -155,7 +156,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="button_Login">
+       <widget class="QPushButton" name="registerButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -175,7 +176,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Log in</string>
+         <string>Create My Account</string>
         </property>
         <property name="default">
          <bool>false</bool>
@@ -199,7 +200,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>104</height>
       </size>
      </property>
     </spacer>

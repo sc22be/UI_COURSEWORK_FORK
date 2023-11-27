@@ -4,11 +4,13 @@
 #include "loginpage.h"
 #include "homepage.h"
 #include "profilepage.h"
+#include "registerpage.h"
 
 #include <QPushButton>
 
 /**
  * @author Mustafa Yozgyur
+ * @author Brent Edington
  * @author ...
 */
 
