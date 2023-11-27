@@ -25,12 +25,7 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-    border-style: solid;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #3498db transparent transparent;
-}
-</string>
+        <string notr="true">border-image: url(:/assets/button_images/leftArrow.jpg);</string>
        </property>
        <property name="text">
         <string>&amp;Back</string>
@@ -86,7 +81,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>17</height>
+       <height>21</height>
       </size>
      </property>
     </spacer>
@@ -99,7 +94,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>18</height>
+       <height>21</height>
       </size>
      </property>
     </spacer>
@@ -117,9 +112,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Username</string>
+        <string>Name</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -127,9 +122,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Name</string>
+        <string>Username</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -146,7 +141,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>17</height>
+       <height>21</height>
       </size>
      </property>
     </spacer>
@@ -159,7 +154,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>18</height>
+       <height>21</height>
       </size>
      </property>
     </spacer>
@@ -172,7 +167,20 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>17</height>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>13</height>
       </size>
      </property>
     </spacer>
@@ -245,19 +253,6 @@
       </spacer>
      </item>
     </layout>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

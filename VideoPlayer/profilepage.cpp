@@ -1,5 +1,5 @@
 #include "profilepage.h"
-#include "ui_profile.h"
+#include "ui_profilepage.h"
 #include "mainwindow.h"
 
 /**
