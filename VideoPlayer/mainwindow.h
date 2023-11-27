@@ -12,6 +12,7 @@
 class LoginPage;
 class HomePage;
 class ProfilePage;
+class RegisterPage;
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -33,7 +34,8 @@ public:
     {
         HOME_PAGE = 0,
         LOGIN_PAGE = 1,
-        PROFILE_PAGE = 2
+        PROFILE_PAGE = 2,
+        REGISTER_PAGE = 3
     };
 
     /**
@@ -45,10 +47,11 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    // Pointers to tacked widget children
+    // Pointers to stacked widget children
     LoginPage* p_LoginPage;
     HomePage* p_HomePage;
     ProfilePage* p_ProfilePage;
+    RegisterPage* p_RegisterPage;
 
 };
 #endif // MAINWINDOW_H

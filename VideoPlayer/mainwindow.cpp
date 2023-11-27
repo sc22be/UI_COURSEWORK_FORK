@@ -4,11 +4,13 @@
 #include "loginpage.h"
 #include "homepage.h"
 #include "profilepage.h"
+#include "welcomepage.h"
 
 #include <QPushButton>
 
 /**
  * @author Mustafa Yozgyur
+ * @author Brent Edington
  * @author ...
 */
 
@@ -32,6 +34,11 @@ MainWindow::MainWindow(QWidget *parent)
     p_ProfilePage = new ProfilePage(nullptr, this);
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
+
+    // Instance register page
+    p_RegisterPage = new RegisterPage(nullptr, this);
+    ui->RegisterPage->layout()->addWidget(p_RegisterPage);
+    p_RegisterPage->show();
 }
 
 MainWindow::~MainWindow()

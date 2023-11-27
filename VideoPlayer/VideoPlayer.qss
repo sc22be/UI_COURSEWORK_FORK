@@ -21,7 +21,11 @@ Theme for title of the app
 */
 QLabel[objectName="title"]
 {
-    font-size: 36px;
+    font-size: 60px;
+}
+QLabel[objectName="subtitle"]
+{
+    font-size: 24px:
 }
 
 /*
