@@ -3,7 +3,7 @@ Global theme for widgets
 */
 QWidget
 {
-    background-color: black;
+    background-color: rgb(30, 30, 30);
 }
 
 /*
