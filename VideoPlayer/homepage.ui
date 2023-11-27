@@ -41,9 +41,9 @@ border: none;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="button_Logout">
+       <widget class="QLabel" name="label_Username">
         <property name="text">
-         <string>Log out</string>
+         <string>[USERNAME]</string>
         </property>
        </widget>
       </item>
@@ -68,7 +68,7 @@ border: none;</string>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="button_UploadVideo">
      <property name="text">
       <string>Upload Video</string>
      </property>

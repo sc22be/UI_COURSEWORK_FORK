@@ -18,7 +18,6 @@ public:
     ~HomePage();
 
 public slots:
-    void LogoutButtonClicked();
     void ProfileButtonClicked();
 
 private:
