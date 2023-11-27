@@ -15,6 +15,7 @@ SOURCES += \
     mainwindow.cpp \
     profilepage.cpp \
     registerpage.cpp \
+    registerpage.cpp
 
 HEADERS += \
     homepage.h \
@@ -22,6 +23,7 @@ HEADERS += \
     mainwindow.h \
     profilepage.h \
     registerpage.h \
+    registerpage.h
 
 FORMS += \
     homepage.ui \
@@ -29,6 +31,7 @@ FORMS += \
     mainwindow.ui \
     profile.ui \
     registerpage.ui \
+    registerpage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -24,7 +24,7 @@ public:
     ~RegisterPage();
 
 private slots:
-    void registerButtonClicked();
+    void RegisterButtonClicked();
 
 private:
     MainWindow* p_MainWindow;

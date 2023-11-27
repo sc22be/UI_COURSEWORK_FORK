@@ -17,7 +17,7 @@ RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window)
     ui->setupUi(this);
 
     // Connect button
-    connect(ui->registerButton, &QPushButton::clicked, this, &RegisterPage::registerButtonClicked);
+    connect(ui->registerButton, &QPushButton::clicked, this, &RegisterPage::RegisterButtonClicked);
 }
 
 RegisterPage::~RegisterPage()
@@ -25,7 +25,7 @@ RegisterPage::~RegisterPage()
     delete ui;
 }
 
-void RegisterPage::registerButtonClicked()
+void RegisterPage::RegisterButtonClicked()
 {
     // TODO: call Login in Core but we havent done that yet lol
 

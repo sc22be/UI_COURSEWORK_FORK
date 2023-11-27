@@ -12,6 +12,7 @@
 class LoginPage;
 class HomePage;
 class ProfilePage;
+class WelcomePage;
 class RegisterPage;
 
 QT_BEGIN_NAMESPACE
