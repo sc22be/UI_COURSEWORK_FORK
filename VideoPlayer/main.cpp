@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     a.setStyleSheet(":/VideoPlayer.qss");
 
     // Set global stylesheet
-    QFile file(":/VideoPlayer.qss");
+    QFile file(":/assets/VideoPlayer.qss");
     file.open(QFile::ReadOnly);
     QString style_sheet = QLatin1String(file.readAll());
     file.close();

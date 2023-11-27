@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>VideoPlayer.qss</file>
+        <file>assets/VideoPlayer.qss</file>
     </qresource>
 </RCC>
