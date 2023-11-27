@@ -35,9 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
     p_ProfilePage = new ProfilePage(nullptr, this);
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
-    p_RegisterPage = new RegisterPage(nullptr, this);
-    ui->RegisterPage->layout()->addWidget(p_RegisterPage);
-    p_RegisterPage->show();
 }
 
 MainWindow::~MainWindow()
