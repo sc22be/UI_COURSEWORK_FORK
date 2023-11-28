@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>VideoPlayer.qss</file>
+        <file>assets/VideoPlayer.qss</file>
+        <file>assets/button_images/profile_image.jpeg</file>
+        <file>assets/button_images/leftArrow.jpg</file>
     </qresource>
 </RCC>
