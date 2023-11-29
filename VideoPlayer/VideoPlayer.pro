@@ -14,14 +14,16 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     profilepage.cpp \
-    registerpage.cpp
+    registerpage.cpp \
+    core.cpp
 
 HEADERS += \
     homepage.h \
     loginpage.h \
     mainwindow.h \
     profilepage.h \
-    registerpage.h
+    registerpage.h \
+    core.h
 
 FORMS += \
     homepage.ui \
