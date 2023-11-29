@@ -106,6 +106,23 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="birthdayLabel">
+        <property name="text">
+         <string>Birthday:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="date_Birthday">
+        <property name="locale">
+         <locale language="English" country="UnitedKingdom"/>
+        </property>
+        <property name="displayFormat">
+         <string>d/M/yyyy</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="emalLabel">
         <property name="text">
          <string>E-Mail:</string>
