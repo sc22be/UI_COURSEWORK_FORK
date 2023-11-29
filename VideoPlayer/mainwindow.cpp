@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
 
-    // Instance profile page
+    // Instance register page
     p_RegisterPage = new RegisterPage(nullptr, this);
     ui->RegisterPage->layout()->addWidget(p_RegisterPage);
     p_RegisterPage->show();
