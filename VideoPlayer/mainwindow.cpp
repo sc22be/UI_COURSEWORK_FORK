@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     p_ProfilePage = new ProfilePage(nullptr, this);
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
+
 }
 
 MainWindow::~MainWindow()
