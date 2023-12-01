@@ -19,7 +19,7 @@ zypper/dnf/pacman/apt install gstreamer
 Install Qt Creator with Qt 5.15
 When running the code run from the file VideoPlayer.pro
 
-## Contrubuting:
+## Contributing:
 - Kanban link: https://trello.com/b/F56Kiy3C/user-interfaces-board
 - Please create a branch for each feature you are working on
 - Pull requests are welcome for when you are done with a feature
