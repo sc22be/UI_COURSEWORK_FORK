@@ -4,6 +4,7 @@ This code is a prototype for the final product. It has login, register, profile 
 
 ## Running the code:
 ### Codecs
+This project requires the gstreamer codecs to run as it uses the gstreamer library to play videos.
 #### macos:
 - install codec
 
