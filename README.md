@@ -41,3 +41,22 @@ git push origin <branch> # push to branch
 ### Merging:
 - Create a pull request on github and someone else will review it  
 - Don't Push to main
+
+### Formatting:
+#### Inline Functions:
+```cpp
+void foo() {
+    // code
+}
+```
+#### Comments:
+```cpp
+/**
+ * @brief foo
+ * @param bar
+ * @return
+ */
+void foo(int bar) {
+    // code
+}
+```
