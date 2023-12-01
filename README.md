@@ -33,6 +33,7 @@ git pull origin <branch> # pull from branch
 git checkout <branch> # switch to branch
 git checkout -b <branch> # create branch and switch to it
 git branch # list branches
+git branch -d <branch> # delete branch
 git add <file> # add file to commit (can use . to add all files)
 git commit -m "message" # commit changes
 git push origin <branch> # push to branch
