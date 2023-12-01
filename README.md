@@ -1,5 +1,6 @@
-# User Interfaces
+# 2811 User Interfaces Coursework3: The Process
 The project is to create a beReal spoof, but for videos.
+This code is a prototype for the final product. It has login, register, profile and home pages. The home page is where the user can see the videos they have uploaded and can upload new videos.
 
 ## Running the code:
 ### Codecs
@@ -28,7 +29,7 @@ When running the code run from the file VideoPlayer.pro
 #### Commands to use:
 ```bash
 git init # initialize git
-git add remote origin <link> # link with ssh or https
+git add remote origin git@github.com:sc22my/UI_COURSEWORK.git # link with ssh
 git pull origin <branch> # pull from branch
 git checkout <branch> # switch to branch
 git checkout -b <branch> # create branch and switch to it
