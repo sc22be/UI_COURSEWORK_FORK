@@ -5,6 +5,7 @@
 #include "homepage.h"
 #include "profilepage.h"
 #include "registerpage.h"
+#include "user.h"
 
 #include <QPushButton>
 
@@ -14,19 +15,24 @@
  * @author ...
 */
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent, QString appPath)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
+    // set up user to store the user details
+    // dynamically declared for global use across the program
+    User *user = new User();
+    user->setPathToAppDirectory(appPath);
+
     // Instance login page
-    p_LoginPage = new LoginPage(nullptr, this);
+    p_LoginPage = new LoginPage(nullptr, this, user);
     ui->LoginPage->layout()->addWidget(p_LoginPage);
     p_LoginPage->show();
 
     // Instance home page
-    p_HomePage = new HomePage(nullptr, this);
+    p_HomePage = new HomePage(nullptr, this, user);
     ui->HomePage->layout()->addWidget(p_HomePage);
     p_HomePage->show();
 

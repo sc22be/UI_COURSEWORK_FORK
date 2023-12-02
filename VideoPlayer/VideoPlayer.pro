@@ -18,8 +18,10 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    post.cpp \
     profilepage.cpp \
-    registerpage.cpp
+    registerpage.cpp \
+    user.cpp
 
 HEADERS += \
     core/application.h \
@@ -30,8 +32,10 @@ HEADERS += \
     homepage.h \
     loginpage.h \
     mainwindow.h \
+    post.h \
     profilepage.h \
-    registerpage.h
+    registerpage.h \
+    user.h
 
 FORMS += \
     homepage.ui \

@@ -3,10 +3,11 @@
 #include "core/application.h"
 #include <QFile>
 #include <iostream>
+#include <Qstring>
 
 /**
  * @author Mustafa Yozgyur
- * @author ...
+ * @author Muhammad Kashif-Khan
 */
 
 int main(int argc, char *argv[])
@@ -21,6 +22,10 @@ int main(int argc, char *argv[])
     Application a(argc, argv);
     a.setStyleSheet(":/VideoPlayer.qss");
 
+    // find relative path to directory
+    // will be used to find the user's account information, primarily posts and personal videos/uploads
+    QString appPath = QCoreApplication::applicationDirPath();
+
     // Set global stylesheet
     QFile file(":/assets/VideoPlayer.qss");
     file.open(QFile::ReadOnly);
@@ -28,7 +33,7 @@ int main(int argc, char *argv[])
     file.close();
     a.setStyleSheet(style_sheet);
 
-    MainWindow w;
+    MainWindow w(nullptr, appPath);
     w.show();
 
     return a.exec();
