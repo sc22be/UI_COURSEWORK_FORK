@@ -16,46 +16,39 @@ class User
 {
     public:
         User(QString appPath);         // this constructor will be used to create the default user using the initial path to the app. there will be only 1 default user for the log in showcase purpose
-//        User(string user, string pass);          // this constructor will be used to take care of any new user joining the platform. this constructor may be redundant
+
+        //        User(string user, string pass);          // this constructor will be used to take care of any new user joining the platform. this constructor may be redundant (havent veriefied with the group)
 
         // getter methods
-        const string getUsername()   { return username; }
-//        const string getPassword()  { return password; }          // temporary comment out until i figure out what is going on
+        const QString getUsername()   { return username; }
+        const QString getPassword()  { return password; }
+        const QString getEmail()    { return email; }
         const QString getPathToUserDirectory()  { return pathToUserDirectory; }
-        const vector<string> getFriends()   { return friends; }               // could not relate more to this...     (dw im joking)
+        const vector<QString> getFriends()   { return friendsList; }               // could not relate more to this...     (dw im joking)
+
+
 
         // setter methods
-        void setUsername(string user);
-//        void setPassword(string pass);          // temporary comment out until i figure out what is going on
-//        void setFriends(vector<string> friendList)  { friends = friendList; }   // involve this to be in the private sector
-        void addFriend(string userFriend);
-        void removeFriend(string userFriend);
+        void setUsername(QString user);
+        void setPassword(QString pass)  { password = pass; }
+        void setEmail(QString e)    { email = e; }
 
-
-//        // take notice of the different name here. setting the path to the app directory can allow us to use the update function to find the path to the user informatio
-        // THIS IS MOST LIKELY REDUNDANT
-
-//        void setPathToAppDirectory(QString path);
-
-
-
+        // friend related methods
+        void addFriend(QString usernameOfFriend);
+        void removeFriend(QString usernameOfFriend);
 
     private:
         // values to store
-        string username;
+        QString username;
         QString pathToUserDirectory;
-        string password;                // @BRENT do you need this?
-        vector<string> friends;
+        QString password;
+        QString email;
+        vector<QString> friendsList;            // the type of the friends list may be changed to conform with requirements. im thinking it may need to be another class called Friend. Need to Discuss
 
         // if the username has been added/modified/updated, these functions will redirect the path to the correct directory
         void updatePathToUserDirectory();
         //  and retrieve the new friends list
         void retrieveFriendsList();
-
-
-
-
-
 };
 
 #endif // USER_H
