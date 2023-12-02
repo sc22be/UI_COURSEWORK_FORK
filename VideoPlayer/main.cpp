@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 
-#include <QApplication>
+#include "core/application.h"
 #include <QFile>
+#include <iostream>
 
 /**
  * @author Mustafa Yozgyur
@@ -10,7 +11,14 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    // Check arg count
+    if (argc < 2)
+    {
+        std::cerr << "No path for videos folder given!" << std::endl;
+        return -1;
+    }
+
+    Application a(argc, argv);
     a.setStyleSheet(":/VideoPlayer.qss");
 
     // Set global stylesheet
