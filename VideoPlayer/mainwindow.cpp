@@ -41,6 +41,10 @@ MainWindow::MainWindow(QWidget *parent, QString appPath)
     ui->ProfilePage->layout()->addWidget(p_ProfilePage);
     p_ProfilePage->show();
 
+    // Instance register page
+    p_RegisterPage = new RegisterPage(nullptr, this);
+    ui->RegisterPage->layout()->addWidget(p_RegisterPage);
+    p_RegisterPage->show();
 }
 
 MainWindow::~MainWindow()

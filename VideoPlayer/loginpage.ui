@@ -185,6 +185,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="button_Register">
+        <property name="text">
+         <string>Not a user? Register</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

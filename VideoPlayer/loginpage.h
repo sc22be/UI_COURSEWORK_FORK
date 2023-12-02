@@ -25,6 +25,7 @@ public:
 
 private slots:
     void LoginButtonClicked();
+    void RegisterButtonClicked();
 
 private:
     MainWindow* p_MainWindow;

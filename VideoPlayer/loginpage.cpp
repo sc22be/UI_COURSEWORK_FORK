@@ -8,6 +8,7 @@
 
 /**
  * @author Mustafa Yozgyur
+ * @author Brent Edington
  * @author Muhammad Kashif-Khan
 */
 
@@ -20,6 +21,7 @@ LoginPage::LoginPage(QWidget *parent, MainWindow* main_window, User *user)
 
     // Connect button
     connect(ui->button_Login, &QPushButton::clicked, this, &LoginPage::LoginButtonClicked);
+    connect(ui->button_Register, &QPushButton::clicked, this, &LoginPage::RegisterButtonClicked);
 }
 
 LoginPage::~LoginPage()
@@ -33,4 +35,10 @@ void LoginPage::LoginButtonClicked()
 
     // If login successful
     p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
+}
+
+void LoginPage::RegisterButtonClicked()
+{
+    // Go to register page
+    p_MainWindow->ChangePage(MainWindow::PageIndex::REGISTER_PAGE);
 }
