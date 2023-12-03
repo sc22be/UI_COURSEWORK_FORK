@@ -8,7 +8,6 @@
 
 #include <string>
 #include <vector>
-#include <QString>
 
 
 class User
