@@ -15,7 +15,7 @@ class HomePage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HomePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr, User *user = nullptr);
+    explicit HomePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~HomePage();
 
 public slots:

@@ -20,7 +20,7 @@ class LoginPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit LoginPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr, User *user = nullptr);
+    explicit LoginPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~LoginPage();
 
 private slots:
