@@ -1,9 +1,14 @@
 #include "core.h"
 
 #include <QString>
+#include <iostream>
 
 Core::Core(const CoreArgs& args)
 {
+    std::cout << "Path to assets: " << args.m_AssetsFolderPath << std::endl;
+    // Set assets folder path
+    m_AssetsPath = args.m_AssetsFolderPath;
+
     // Initialise user
     m_User.SetUsername("Test");
     m_User.SetEmail("test@test.com");
