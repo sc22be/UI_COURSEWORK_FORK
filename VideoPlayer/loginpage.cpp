@@ -1,6 +1,7 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
 #include "mainwindow.h"
+#include "core/user.h"
 
 #include <QPushButton>
 #include <iostream>
@@ -8,10 +9,10 @@
 /**
  * @author Mustafa Yozgyur
  * @author Brent Edington
- * @author ...
+ * @author Muhammad Kashif-Khan
 */
 
-LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)
+LoginPage::LoginPage(QWidget *parent, MainWindow* main_window, User *user)
     : QWidget{parent}
     , p_MainWindow(main_window)
     , ui(new Ui::LoginPage())

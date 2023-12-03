@@ -19,7 +19,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     profilepage.cpp \
-    registerpage.cpp
+    registerpage.cpp \
+    user.cpp
 
 HEADERS += \
     core/application.h \
@@ -31,7 +32,8 @@ HEADERS += \
     loginpage.h \
     mainwindow.h \
     profilepage.h \
-    registerpage.h
+    registerpage.h \
+    user.h
 
 FORMS += \
     homepage.ui \

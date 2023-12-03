@@ -7,6 +7,7 @@
 */
 
 #include <QWidget>
+#include "core/user.h"
 
 class QPushButton;
 class MainWindow;
@@ -20,7 +21,7 @@ class RegisterPage : public QWidget
     Q_OBJECT
 
 public:
-    explicit RegisterPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
+    explicit RegisterPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr, User *user = nullptr);
     ~RegisterPage();
 
 private slots:

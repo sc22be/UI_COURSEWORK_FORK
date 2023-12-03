@@ -2,6 +2,7 @@
 #define HOMEPAGE_H
 
 #include <QWidget>
+#include "core/user.h"
 
 class QPushButton;
 class MainWindow;
@@ -14,7 +15,7 @@ class HomePage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit HomePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
+    explicit HomePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr, User *user = nullptr);
     ~HomePage();
 
 public slots:
