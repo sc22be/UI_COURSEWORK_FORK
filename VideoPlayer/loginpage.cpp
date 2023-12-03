@@ -1,7 +1,7 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
 #include "mainwindow.h"
-#include "user.h"
+#include "core/user.h"
 
 #include <QPushButton>
 #include <iostream>

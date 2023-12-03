@@ -18,7 +18,6 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
-    post.cpp \
     profilepage.cpp \
     registerpage.cpp \
     user.cpp
@@ -32,7 +31,6 @@ HEADERS += \
     homepage.h \
     loginpage.h \
     mainwindow.h \
-    post.h \
     profilepage.h \
     registerpage.h \
     user.h

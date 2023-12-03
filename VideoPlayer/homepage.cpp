@@ -2,13 +2,14 @@
 #include "ui_homepage.h"
 
 #include "mainwindow.h"
+#include "core/user.h"
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
 */
 
-HomePage::HomePage(QWidget *parent, MainWindow* main_window)
+HomePage::HomePage(QWidget *parent, MainWindow* main_window, User *user)
     : QWidget{parent}
     , p_MainWindow(main_window)
     , ui(new Ui::HomePage())
@@ -43,12 +44,12 @@ void HomePage::ProfileButtonClicked()
     p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
 }
 
-void HomePage::setupPosts()
-{
-    // TODO: retrieve posts by video
+//void HomePage::setupPosts()
+//{
+//    // TODO: retrieve posts by video
 
-    // TODO: loop through each video and set up each videos layout. store it to a list of layouts
-        // need post metadata
+//    // TODO: loop through each video and set up each videos layout. store it to a list of layouts
+//        // need post metadata
 
-    // TODO: setup the layouts in date order
-}
+//    // TODO: setup the layouts in date order
+//}

@@ -7,7 +7,7 @@
 */
 
 #include <QWidget>
-#include <user.h>
+#include "core/user.h"
 
 class QPushButton;
 class MainWindow;
