@@ -8,7 +8,7 @@
 /**
  * @author Mustafa Yozgyur
  * @author Brent Edington
- * @author ...
+ * @author Muhammad Kashif-Khan
 */
 
 LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)

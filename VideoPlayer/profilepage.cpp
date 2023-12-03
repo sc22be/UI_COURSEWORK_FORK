@@ -4,7 +4,7 @@
 
 /**
  * @author Mustafa Yozgyur
- * @author ...
+ * @author Muhammad Kashif-Khan
 */
 
 ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)

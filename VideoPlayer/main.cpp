@@ -3,10 +3,11 @@
 #include "core/application.h"
 #include <QFile>
 #include <iostream>
+#include <QString>
 
 /**
  * @author Mustafa Yozgyur
- * @author ...
+ * @author Muhammad Kashif-Khan
 */
 
 int main(int argc, char *argv[])
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
     file.close();
     a.setStyleSheet(style_sheet);
 
-    MainWindow w;
+    MainWindow w(nullptr);
     w.show();
 
     return a.exec();
