@@ -20,7 +20,7 @@ class ProfilePage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ProfilePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr, User *user = nullptr);
+    explicit ProfilePage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~ProfilePage();
 
 public slots:

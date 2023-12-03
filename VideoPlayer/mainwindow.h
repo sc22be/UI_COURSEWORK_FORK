@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr, QString appPath = "");
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     // Indicies of pages in stackedWidget

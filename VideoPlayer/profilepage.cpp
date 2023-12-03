@@ -1,14 +1,13 @@
 #include "profilepage.h"
 #include "ui_profilepage.h"
 #include "mainwindow.h"
-#include "core/user.h"
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
 */
 
-ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window, User *user)
+ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
     , p_MainWindow(main_window)
     , ui(new Ui::ProfilePage())

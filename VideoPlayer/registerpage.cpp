@@ -1,7 +1,6 @@
 #include "registerpage.h"
 #include "ui_registerpage.h"
 #include "mainwindow.h"
-#include "core/user.h"
 
 #include <QPushButton>
 #include <iostream>
@@ -10,7 +9,7 @@
  * @author ...
 */
 
-RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window, User *user)
+RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
     , p_MainWindow(main_window)
     , ui(new Ui::RegisterPage())

@@ -2,14 +2,13 @@
 #include "ui_homepage.h"
 
 #include "mainwindow.h"
-#include "core/user.h"
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
 */
 
-HomePage::HomePage(QWidget *parent, MainWindow* main_window, User *user)
+HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     : QWidget{parent}
     , p_MainWindow(main_window)
     , ui(new Ui::HomePage())
@@ -17,10 +16,14 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window, User *user)
     ui->setupUi(this);
 
     // Muhammad has added the following
-    //  I WILL TAKE CARE OF THIS LATER
-//    User user = new User();
+    // I WILL TAKE CARE OF THIS LATER
+    // User user = new User();
+    // tip: get the user by calling:
+    // Application::instance()->GetUser();
+    // will need to #include "core/application.h"
 
-//    QScrollArea *scrollAreaForPosts = findChild<QScrollArea*>("scrollAreaForPosts");
+    // QScrollArea *scrollAreaForPosts = findChild<QScrollArea*>("scrollAreaForPosts");
+    // u can use ui->scrollArea to get the ScrollArea btw.
 
 //    if (scrollAreaForPosts)
 //    {
