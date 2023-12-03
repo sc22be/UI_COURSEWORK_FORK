@@ -30,6 +30,6 @@ void RegisterPage::RegisterButtonClicked()
     // TODO: call Login in Core but we havent done that yet
 
     // If login successful
-    p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
+    p_MainWindow->ChangePage(MainWindow::PageIndex::LOGIN_PAGE);
 }
 
