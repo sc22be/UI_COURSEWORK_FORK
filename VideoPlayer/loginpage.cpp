@@ -1,9 +1,12 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
 #include "mainwindow.h"
+#include "core/application.h"
 
 #include <QPushButton>
 #include <iostream>
+#include <string>
+#include <QMessageBox>
 
 /**
  * @author Mustafa Yozgyur
@@ -30,10 +33,25 @@ LoginPage::~LoginPage()
 
 void LoginPage::LoginButtonClicked()
 {
-    // TODO: call Login in Core but we havent done that yet lol
+    // Get core
+    Core* core = Application::instance()->GetCore();
 
-    // If login successful
-    p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
+    // Get strings
+    std::string Email = ui->text_Email->text().toStdString();
+    std::string Password = ui->text_Password->text().toStdString();
+
+    // Test if login successful
+    bool result = core->SubmitLogin(Email, Password);
+    if (result)
+    {
+        // If login successful
+        p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
+    }
+    else
+    {
+        // Pop up to say password incorrect
+        QMessageBox::critical(this, "Login Failed", "Incorrect email or password.");
+    }
 }
 
 void LoginPage::RegisterButtonClicked()
