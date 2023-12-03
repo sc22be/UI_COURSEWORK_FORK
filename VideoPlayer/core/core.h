@@ -7,6 +7,7 @@
 
 #include <array>
 #include <string>
+#include <QDateTime>
 
 /**
  * @author Mustafa Yozgyur
@@ -25,6 +26,7 @@ class Core
 public:
     Core(const CoreArgs& args);
     bool SubmitLogin(std::string email, std::string password);
+    int RegisterAccount(std::string username, std::string password, std::string email, QDateTime birthday);
 
     // Getters
     inline Settings* GetSettings() { return &m_Settings; }
