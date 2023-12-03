@@ -1,6 +1,8 @@
 #include "core.h"
 
 #include <QString>
+#include <QDateTime>
+#include <regex>
 
 Core::Core(const CoreArgs& args)
 {
@@ -30,4 +32,63 @@ bool Core::SubmitLogin(std::string email, std::string password)
 
         return false;
     }
+}
+
+//Account Modification
+int Core::RegisterAccount(std::string username, std::string password, std::string email, QDateTime birthday)
+{
+    // Check if all fields were given
+    if (username.empty() || password.empty() || email.empty() || birthday.isNull())
+    {
+        return -1;
+    }
+
+    // Check if age is 13 or above
+    QDateTime today = QDateTime::currentDateTime();
+    int yearsDiff = birthday.daysTo(today) / 365;
+    if (yearsDiff < 13)
+    {
+        return 1;
+    }
+
+    // Create all the regex for passwords (to give personalised errors)
+    std::regex contUppercase("[A-Z]");
+    std::regex contLowercase("[a-z]");
+    std::regex containsNum("[0-9]");
+    //std::regex containsSymbol("[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]"); TBD
+
+    // Check password strength
+    if (password.length() < 8)
+    {
+        // If password length is less then 8
+        return 2;
+    }
+    else if (!std::regex_search(password, contUppercase))
+    {
+        // If password does not contain uppercase
+        return 3;
+    }
+    else if (!std::regex_search(password, contLowercase))
+    {
+        // If password does not contain lowercase
+        return 4;
+    }
+    else if (!std::regex_search(password, containsNum))
+    {
+        // If password does not contain a number
+        return 5;
+    }
+    /* TBD
+    else if (!std::regex_search(password, containsSymbol))
+    {
+        // If password does not contain a symbol
+        return 6;
+    }
+    */
+
+    // After all checks, change user information and return 0 to change page
+    m_User.SetUsername(username);
+    m_User.SetEmail(email);
+    m_User.SetPassword(password);
+    return 0;
 }
