@@ -24,6 +24,7 @@ class Core
 {
 public:
     Core(const CoreArgs& args);
+    bool SubmitLogin(std::string email, std::string password);
 
     // Getters
     inline Settings* GetSettings() { return &m_Settings; }
