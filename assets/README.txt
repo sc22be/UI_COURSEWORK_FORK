@@ -1,4 +1,4 @@
-This is the folder for assets used in the app
-For example:
-	Background images
-	QT themes
+This directory contains settings
+
+videos folder contains videos
+videos/user contains videos uploaded by user
