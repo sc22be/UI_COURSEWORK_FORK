@@ -44,36 +44,36 @@ void RegisterPage::RegisterButtonClicked()
     int result = core->RegisterAccount(Username, Password, Email, Birthday);
     switch (result)
     {
-        case 0:
+        case Register::SUCCESS:
             // If login successful
             p_MainWindow->ChangePage(MainWindow::PageIndex::LOGIN_PAGE);
             break;
-        case -1:
+        case Register::EMPTY:
             // Fields left blank
             QMessageBox::critical(this, "Register Account Failed", "Please fill in the missing information.");
             break;
-        case 1:
+        case Register::TOOYOUNG:
             // Pop up to say too young
             QMessageBox::critical(this, "Register Account Failed", "You must be atleast 13 years old to create an account!");
             break;
-        case 2:
+        case Register::SHORTPASS:
             // Pop up to say pass word needs to be atleast 8 characters
             QMessageBox::critical(this, "Register Account Failed", "Password must be atleast 8 characters long!");
             break;
-        case 3:
+        case Register::NOUPPER:
             // Pop up to say password needs uppercase
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one uppercase character!");
             break;
-        case 4:
+        case Register::NOLOWER:
             // Pop up to say password needs lowercase
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one lowercase character!");
             break;
-        case 5:
+        case Register::NONUM:
             // Pop up to say password needs a number
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one number!");
             break;
         /* TBD
-        case 6:
+        case Register::NOSYMBOL:
             // Pop up to say password needs lowercase
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one symbol!");
             break;

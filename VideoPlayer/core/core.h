@@ -23,6 +23,7 @@ struct CoreArgs
 // Implements backend apis and stuff
 class Core
 {
+
 public:
     Core(const CoreArgs& args);
     bool SubmitLogin(std::string email, std::string password);
@@ -39,6 +40,19 @@ private:
     Settings m_Settings;
     User m_User;
     VideoDB m_VideoDB;
+};
+
+// Enums for different return states for the register function
+enum Register
+{
+    SUCCESS,
+    EMPTY,
+    TOOYOUNG,
+    SHORTPASS,
+    NOUPPER,
+    NOLOWER,
+    NONUM
+    //NOSYMBOL TBD
 };
 
 #endif // CORE_H
