@@ -42,7 +42,6 @@ bool Core::SubmitLogin(std::string email, std::string password)
 //Account Modification
 int Core::RegisterAccount(std::string username, std::string password, std::string email, QDateTime birthday)
 {
-
     // Check if all fields were given
     if (username.empty() || password.empty() || email.empty() || birthday.isNull())
     {

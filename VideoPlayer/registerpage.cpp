@@ -22,6 +22,11 @@ RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window)
 
     // Connect button
     connect(ui->registerButton, &QPushButton::clicked, this, &RegisterPage::RegisterButtonClicked);
+
+    // Set default date
+    QDate today = QDate::currentDate();
+    QDate modTodaysDate = today.addYears(-13);
+    ui->date_Birthday->setDate(modTodaysDate);
 }
 
 RegisterPage::~RegisterPage()
