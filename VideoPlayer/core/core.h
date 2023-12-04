@@ -16,7 +16,7 @@
 // Arguments to construct core
 struct CoreArgs
 {
-    std::string m_VideosPath;
+    std::string m_AssetsFolderPath;
 };
 
 // Singleton class
@@ -35,6 +35,8 @@ public:
     inline VideoDB* GetVideoDB() { return &m_VideoDB; }
 
 private:
+
+    std::string m_AssetsPath = "";
 
     // Core related classes
     Settings m_Settings;
