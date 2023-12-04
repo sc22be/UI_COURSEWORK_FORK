@@ -16,13 +16,14 @@
 // Arguments to construct core
 struct CoreArgs
 {
-    std::string m_VideosPath;
+    std::string m_AssetsFolderPath;
 };
 
 // Singleton class
 // Implements backend apis and stuff
 class Core
 {
+
 public:
     Core(const CoreArgs& args);
     bool SubmitLogin(std::string email, std::string password);
@@ -35,10 +36,25 @@ public:
 
 private:
 
+    std::string m_AssetsPath = "";
+
     // Core related classes
     Settings m_Settings;
     User m_User;
     VideoDB m_VideoDB;
+};
+
+// Enums for different return states for the register function
+enum Register
+{
+    SUCCESS,
+    EMPTY,
+    TOOYOUNG,
+    SHORTPASS,
+    NOUPPER,
+    NOLOWER,
+    NONUM
+    //NOSYMBOL TBD
 };
 
 #endif // CORE_H

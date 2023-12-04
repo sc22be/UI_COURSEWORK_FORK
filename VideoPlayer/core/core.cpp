@@ -1,11 +1,16 @@
 #include "core.h"
 
 #include <QString>
+#include <iostream>
 #include <QDateTime>
 #include <regex>
 
 Core::Core(const CoreArgs& args)
 {
+    std::cout << "Path to assets: " << args.m_AssetsFolderPath << std::endl;
+    // Set assets folder path
+    m_AssetsPath = args.m_AssetsFolderPath;
+
     // Initialise user
     m_User.SetUsername("Test");
     m_User.SetEmail("test@test.com");
@@ -40,7 +45,7 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
     // Check if all fields were given
     if (username.empty() || password.empty() || email.empty() || birthday.isNull())
     {
-        return -1;
+        return Register::EMPTY;
     }
 
     // Check if age is 13 or above
@@ -48,7 +53,7 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
     int yearsDiff = birthday.daysTo(today) / 365;
     if (yearsDiff < 13)
     {
-        return 1;
+        return Register::TOOYOUNG;
     }
 
     // Create all the regex for passwords (to give personalised errors)
@@ -61,28 +66,28 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
     if (password.length() < 8)
     {
         // If password length is less then 8
-        return 2;
+        return Register::SHORTPASS;
     }
     else if (!std::regex_search(password, contUppercase))
     {
         // If password does not contain uppercase
-        return 3;
+        return Register::NOUPPER;
     }
     else if (!std::regex_search(password, contLowercase))
     {
         // If password does not contain lowercase
-        return 4;
+        return Register::NOLOWER;
     }
     else if (!std::regex_search(password, containsNum))
     {
         // If password does not contain a number
-        return 5;
+        return Register::NONUM;
     }
     /* TBD
     else if (!std::regex_search(password, containsSymbol))
     {
         // If password does not contain a symbol
-        return 6;
+        return Register::NOSYMBOL;
     }
     */
 
@@ -90,5 +95,5 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
     m_User.SetUsername(username);
     m_User.SetEmail(email);
     m_User.SetPassword(password);
-    return 0;
+    return Register::SUCCESS;
 }
