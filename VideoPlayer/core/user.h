@@ -16,10 +16,10 @@ public:
     User();
 
     // getter methods
-    const std::string GetUsername()   { return m_Username; }
-    const std::string GetPassword()  { return m_Password; }
-    const std::string GetEmail()    { return m_Email; }
-    const std::vector<User*> GetFriends()   { return m_FriendsList; } // could not relate more to this...     (dw im joking)
+    const std::string GetUsername()          { return m_Username; }
+    const std::string GetPassword()          { return m_Password; }
+    const std::string GetEmail()             { return m_Email; }
+    const std::vector<User*> GetFriends()    { return m_FriendsList; } // could not relate more to this...     (dw im joking)
     std::vector<User*> RetrieveFriendsList() { return m_FriendsList; }
 
 
@@ -35,9 +35,9 @@ public:
 
 private:
     // values to store
-    std::string m_Username;
-    std::string m_Password;
-    std::string m_Email;
+    std::string m_Username = "test";
+    std::string m_Password = "password";
+    std::string m_Email = "test@test.com";
     std::vector<User*> m_FriendsList;
 };
 
