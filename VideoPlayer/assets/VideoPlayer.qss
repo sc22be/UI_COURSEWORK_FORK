@@ -64,3 +64,15 @@ QScrollArea
     margin-left: 0px;
     margin-right: 0px;
 }
+
+/*
+Global theme for date inputs
+*/
+QDateEdit
+{
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    padding: 7px;
+}
