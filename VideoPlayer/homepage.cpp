@@ -1,6 +1,6 @@
 #include "homepage.h"
 #include "ui_homepage.h"
-
+#include "core/application.h"
 #include "mainwindow.h"
 
 /**
@@ -17,9 +17,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 
     // Muhammad has added the following
     // I WILL TAKE CARE OF THIS LATER
-    // User user = new User();
+//     User user = new User();
     // tip: get the user by calling:
-    // Application::instance()->GetUser();
+    Application::instance()->GetUser();
     // will need to #include "core/application.h"
 
     // QScrollArea *scrollAreaForPosts = findChild<QScrollArea*>("scrollAreaForPosts");
