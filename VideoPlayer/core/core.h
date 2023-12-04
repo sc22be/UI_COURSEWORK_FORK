@@ -7,6 +7,7 @@
 
 #include <array>
 #include <string>
+#include <QDateTime>
 
 /**
  * @author Mustafa Yozgyur
@@ -22,9 +23,11 @@ struct CoreArgs
 // Implements backend apis and stuff
 class Core
 {
+
 public:
     Core(const CoreArgs& args);
     bool SubmitLogin(std::string email, std::string password);
+    int RegisterAccount(std::string username, std::string password, std::string email, QDateTime birthday);
 
     // Getters
     inline Settings* GetSettings() { return &m_Settings; }
@@ -39,6 +42,19 @@ private:
     Settings m_Settings;
     User m_User;
     VideoDB m_VideoDB;
+};
+
+// Enums for different return states for the register function
+enum Register
+{
+    SUCCESS,
+    EMPTY,
+    TOOYOUNG,
+    SHORTPASS,
+    NOUPPER,
+    NOLOWER,
+    NONUM
+    //NOSYMBOL TBD
 };
 
 #endif // CORE_H
