@@ -19,8 +19,8 @@ public:
     const std::string GetUsername()          { return m_Username; }
     const std::string GetPassword()          { return m_Password; }
     const std::string GetEmail()             { return m_Email; }
-    const std::vector<User*> GetFriends()    { return m_FriendsList; } // could not relate more to this...     (dw im joking)
-    std::vector<User*> RetrieveFriendsList() { return m_FriendsList; }
+    const std::vector<std::string> GetFriends()    { return m_FriendsList; } // could not relate more to this...     (dw im joking)
+    std::vector<std::string> RetrieveFriendsList() { return m_FriendsList; }
 
 
 
@@ -30,7 +30,7 @@ public:
     void SetEmail(std::string email)    { m_Email = email; }
 
     // friend related methods
-    void AddFriend(User* usernameOfFriend);
+    void AddFriend(std::string usernameOfFriend);
     // void RemoveFriend(User* usernameOfFriend); // Removed: as wont be used in the prototype
 
 private:
@@ -38,7 +38,7 @@ private:
     std::string m_Username = "test";
     std::string m_Password = "password";
     std::string m_Email = "test@test.com";
-    std::vector<User*> m_FriendsList;
+    std::vector<std::string> m_FriendsList;
 };
 
 #endif // USER_H
