@@ -20,15 +20,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Instance login page
-    p_LoginPage = new LoginPage(nullptr, this);
-    ui->LoginPage->layout()->addWidget(p_LoginPage);
-    p_LoginPage->show();
-
     // Instance home page
     p_HomePage = new HomePage(nullptr, this);
     ui->HomePage->layout()->addWidget(p_HomePage);
     p_HomePage->show();
+
+    // Instance login page
+    p_LoginPage = new LoginPage(nullptr, this);
+    ui->LoginPage->layout()->addWidget(p_LoginPage);
+    p_LoginPage->show();
 
     // Instance profile page
     p_ProfilePage = new ProfilePage(nullptr, this);

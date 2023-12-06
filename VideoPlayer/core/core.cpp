@@ -16,7 +16,7 @@ Core::Core(const CoreArgs& args)
     m_User.SetEmail("test@test.com");
     m_User.SetPassword("password");
 
-    // add friends to user
+    // Add friends to user
     m_User.AddFriend("@DynoAbd786");
     m_User.AddFriend("@Brek");
     m_User.AddFriend("@Gamer");
