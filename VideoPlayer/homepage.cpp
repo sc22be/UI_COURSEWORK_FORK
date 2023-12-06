@@ -59,7 +59,7 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
-    VideosInDirectory = RetrieveVideosFromDirectory();
+    VideosFromDirectory = RetrieveVideosFromDirectory();
 
     // TODO: retrieve videos
 //    vector<string> VideosLocation = RetrieveVideosFromDirectory();
@@ -70,7 +70,7 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     // TODO: setup the layouts in date order
 }
 
-vector<QUrl*> HomePage::RetrieveVideosFromDirectory()
+vector<HomePage::Video> HomePage::RetrieveVideosFromDirectory()
 {
     // TODO (maybe): implement the situation where the path was entered by the user
 
@@ -98,7 +98,7 @@ vector<QUrl*> HomePage::RetrieveVideosFromDirectory()
 
     // Find all videos in the videos directory and store it to a vector to return
     // MAY NEED TO MAKE A SUBCLASS FOR STORING VIDEO
-    vector<QUrl*> VideoUrls;
+    vector<HomePage::Video> DataForVideos;
 
     // We are going to look through the directory for any videos
     // This has been adapted from "the.pro" and its code
@@ -119,12 +119,18 @@ vector<QUrl*> HomePage::RetrieveVideosFromDirectory()
         if (f.contains(".mp4") || f.contains("MOV"))
         { // mac/linux
 #endif
-            QUrl* url = new QUrl(QUrl::fromLocalFile(f)); // convert the file location to a generic url
-            VideoUrls.push_back(url);
+            QUrl* Url = new QUrl(QUrl::fromLocalFile(f)); // convert the file location to a generic url
+            // Obtain file path to get DateTime metadata
+            QString FilePath = Url->toLocalFile();
+            QFileInfo FileInfo(FilePath);
+            QDateTime CreationDateTime = FileInfo.birthTime();
+
+            // Save video URL and DateTime to list of Videos
+            DataForVideos.push_back(HomePage::Video(Url, CreationDateTime));
         }
     }
 
-    return VideoUrls;
+    return DataForVideos;
 }
 
 //// read in videos and thumbnails to this directory
