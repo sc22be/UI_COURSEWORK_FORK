@@ -300,14 +300,12 @@ void PostWidget::ChangeLikeButtonStatus()
     {
         m_LikeButton->setIcon(QIcon(":/assets/button_images/likeButtonOn.jpg"));
         m_LikeButton->setCheckable(true);
-//        update();
     }
     else
     {
         // cout << "herrr2" << endl;
         m_LikeButton->setIcon(QIcon(":/assets/button_images/likeButtonOff.jpg"));
         m_LikeButton->setCheckable(false);
-        update();
     }
 }
 
