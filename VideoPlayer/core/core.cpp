@@ -56,6 +56,19 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
         return Register::TOOYOUNG;
     }
 
+    // Check if email is valid
+    // Create email formatting (requreing and @ and .)
+    QRegExp mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+    mailFormat.setCaseSensitivity(Qt::CaseInsensitive);
+    mailFormat.setPatternSyntax(QRegExp::RegExp);
+
+    // If not an email
+    bool isEmail = mailFormat.exactMatch(QString::fromStdString(email));
+    if (!isEmail)
+    {
+        return Register::NOTEMAIL;
+    }
+
     // Create all the regex for passwords (to give personalised errors)
     std::regex contUppercase("[A-Z]");
     std::regex contLowercase("[a-z]");
