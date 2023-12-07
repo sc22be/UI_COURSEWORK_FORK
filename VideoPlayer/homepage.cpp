@@ -11,7 +11,7 @@
 
 // This is a variable used to indicate how many videos and users there are meant to be
 // THIS IS NOT TO INDICATE THE FINAL DESIGN. DEMONSTRATION PURPOSES ONLY
-#define SET_POSTS 4
+#define SET_POSTS 1
 
 using namespace std;
 
@@ -92,7 +92,7 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     // There are videos and friends to display
     else
     {
-        cout << "here" << endl;
+        // cout << "here" << endl;
         PostWidgets = SetupPostWidgetsAndLayout(VideosFromDirectory);
         ui->scrollAreaForPosts->setWidget(PostWidgets[0]);
 //        ui->scrollAreaForPosts->show();
@@ -118,7 +118,7 @@ vector<HomePage::Video*> HomePage::RetrieveVideosFromDirectory()
     // So we will navigate out from this directory until an assets folder can be found. (this was pre-defined by the group)
 
     //  TEST LINE
-    cout << AppDirPath.toStdString() << endl;
+    // cout << AppDirPath.toStdString() << endl;
 
     // Call QDir to navigate directories
     QDir AppDir(AppDirPath);
@@ -135,7 +135,7 @@ vector<HomePage::Video*> HomePage::RetrieveVideosFromDirectory()
     AppDir.cd("videos");
 
     // TEST LINE
-    cout << AppDir.absolutePath().toStdString() << endl;
+    // cout << AppDir.absolutePath().toStdString() << endl;
 
     // Find all videos in the videos directory and store it to a vector to return
     // MAY NEED TO MAKE A SUBCLASS FOR STORING VIDEO
@@ -168,7 +168,7 @@ vector<HomePage::Video*> HomePage::RetrieveVideosFromDirectory()
 
             // Save video URL and DateTime to list of Videos
             DataForVideos.push_back(new HomePage::Video(Url, CreationDateTime));
-            cout << DataForVideos[0]->GetCreationTimeToString().toStdString() << endl;
+            // cout << DataForVideos[0]->GetCreationTimeToString().toStdString() << endl;
         }
     }
 
@@ -304,7 +304,7 @@ void PostWidget::ChangeLikeButtonStatus()
     }
     else
     {
-        cout << "herrr2" << endl;
+        // cout << "herrr2" << endl;
         m_LikeButton->setIcon(QIcon(":/assets/button_images/likeButtonOff.jpg"));
         m_LikeButton->setCheckable(false);
         update();
