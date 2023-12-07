@@ -3,5 +3,8 @@
         <file>assets/VideoPlayer.qss</file>
         <file>assets/button_images/profile_image.jpeg</file>
         <file>assets/button_images/leftArrow.jpg</file>
+        <file>assets/button_images/likeButtonOff.jpg</file>
+        <file>assets/button_images/likeButtonOn.jpg</file>
+        <file>assets/button_images/commentsButton.jpg</file>
     </qresource>
 </RCC>
