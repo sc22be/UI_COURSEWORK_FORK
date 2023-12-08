@@ -2,10 +2,13 @@
 #include "ui_homepage.h"
 
 #include "mainwindow.h"
+#include "core/countdown.h"
+#include <QDebug>
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
+ * @author Brent Edington
 */
 
 HomePage::HomePage(QWidget *parent, MainWindow* main_window)
@@ -34,6 +37,20 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     // End of addition
 
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
+
+    // Label for timer
+    QLabel* timerLabel = ui->label_Timer;
+    // Change text when signal given
+    QObject::connect(&timer, &countdown::timerChanged, [timerLabel](const QString& text)
+    {
+        timerLabel->setText(text);
+    });
+    // Change style when signal given
+    QObject::connect(&timer, &countdown::timerColorChange, [timerLabel](const QString& style)
+    {
+        timerLabel->setStyleSheet(style);
+    });
+    timer.StartCountdown(65);
 }
 
 HomePage::~HomePage()
