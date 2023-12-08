@@ -51,11 +51,11 @@ border: none;</string>
     </widget>
    </item>
    <item>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QScrollArea" name="scrollAreaForPosts">
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_4">
+     <widget class="QWidget" name="widget_2">
       <property name="geometry">
        <rect>
         <x>0</x>
