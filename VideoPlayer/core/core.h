@@ -53,7 +53,8 @@ enum Register
     SHORTPASS,
     NOUPPER,
     NOLOWER,
-    NONUM
+    NONUM,
+    NOTEMAIL,
     //NOSYMBOL TBD
 };
 
