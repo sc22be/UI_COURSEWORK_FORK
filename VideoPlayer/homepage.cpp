@@ -113,7 +113,7 @@ vector<HomePage::Video*> HomePage::RetrieveVideosFromDirectory()
     // this may need to be taken care of in the login page
 
     // find path to videos
-    QString AppDirPath = Application::instance()->applicationDirPath();
+    QString AppDirPath = QApplication::applicationDirPath();
     // Apparently calling this function leads to ".../build-VideoPlayer-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug"
     // So we will navigate out from this directory until an assets folder can be found. (this was pre-defined by the group)
 
