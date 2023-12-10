@@ -7,8 +7,10 @@ VideoDB::VideoDB()
 
 std::vector<Video> VideoDB::GetVideos()
 {
-    // Return an empty vector for now
-    return std::vector<Video>();
+    std::vector<Video> videos;
+    videos.push_back(Video("test", QDateTime::currentDateTime()));
+
+    return videos;
 }
 
 std::vector<Video> VideoDB::GetUserVideos()

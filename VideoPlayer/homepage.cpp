@@ -62,9 +62,9 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     std::vector<Video> videos = Application::instance()->GetCore()->GetVideoDB()->GetVideos();
 
     // Add all the videos to the scroll view
-    for (auto video : videos)
+    for (auto& video : videos)
     {
         Post* post = new Post();
-        ui->sa_Posts->layout()->addWidget(post);
+        ui->w_PostsWidget->layout()->addWidget(post);
     }
 }
