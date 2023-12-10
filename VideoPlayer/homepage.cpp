@@ -36,11 +36,12 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 
 
     // End of addition
-
+    // Connect to profile page
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
 
     // Label for timer
     QLabel* timerLabel = ui->label_Timer;
+    ui->label_Timer->hide();
     // Change text when signal given
     QObject::connect(&timer, &countdown::timerChanged, [timerLabel](const QString& text)
     {
@@ -56,8 +57,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     {
         if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
         {
-            timer.StartCountdown(120); // In seconds
             QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+            this->ui->label_Timer->show();
+            timer.StartCountdown(120); // In seconds
         }
     });
 }
