@@ -16,11 +16,11 @@ Core::Core(const CoreArgs& args)
     m_User.SetEmail("test@test.com");
     m_User.SetPassword("password");
 
-    // Add friends to user
-    m_User.AddFriend("@DynoAbd786");
-    m_User.AddFriend("@Brek");
-    m_User.AddFriend("@Gamer");
-    m_User.AddFriend("@xSarahVictoria");
+    // Add friends to user : TODO
+    // m_User.AddFriend("@DynoAbd786");
+    // m_User.AddFriend("@Brek");
+    // m_User.AddFriend("@Gamer");
+    // m_User.AddFriend("@xSarahVictoria");
 }
 
 // Account Authication

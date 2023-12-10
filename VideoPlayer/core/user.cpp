@@ -11,7 +11,7 @@ User::User()
 }
 
 // adds friends to the friends list, 1 by 1
-void User::AddFriend(std::string usernameOfFriend)
+void User::AddFriend(User* usernameOfFriend)
 {
     m_FriendsList.push_back(usernameOfFriend);
 }

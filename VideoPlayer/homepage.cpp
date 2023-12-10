@@ -179,16 +179,11 @@ vector<PostWidget*> HomePage::SetupPostWidgetsAndLayout(vector<HomePage::Video*>
 {
     // Set Posts list
     vector<PostWidget*> Posts;
-    PostWidget *Post;
-
-    // Get user information and friends
-    User *p_User = Application::instance()->GetCore()->GetUser();
-    vector<string> UserFriends = p_User->GetFriends();
 
     // Make 1 Post from the user and videos information
     for (int NumPosts = 0; NumPosts < SET_POSTS; NumPosts++)
     {
-        Posts.push_back(new PostWidget(UserFriends[NumPosts], DataForVideos[NumPosts]));
+        Posts.push_back(new PostWidget("Example", DataForVideos[NumPosts]));
     }
 
     return Posts;
