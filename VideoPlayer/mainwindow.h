@@ -30,9 +30,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    // Getter function for getting pointer to HomePage
-    HomePage *GetPointerToHomePage()    { return p_HomePage; }
-
     // Indicies of pages in stackedWidget
     enum PageIndex
     {

@@ -23,10 +23,6 @@ public:
     explicit LoginPage(QWidget *parent = nullptr, MainWindow* main_window = nullptr);
     ~LoginPage();
 
-
-signals:
-    void SuccessfulLogin();
-
 private slots:
     void LoginButtonClicked();
     void RegisterButtonClicked();

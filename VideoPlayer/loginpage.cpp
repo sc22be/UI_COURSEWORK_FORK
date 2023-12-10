@@ -2,7 +2,6 @@
 #include "ui_loginpage.h"
 #include "mainwindow.h"
 #include "core/application.h"
-#include "homepage.h"
 
 #include <QPushButton>
 #include <iostream>
@@ -25,9 +24,6 @@ LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)
     // Connect button
     connect(ui->button_Login, &QPushButton::clicked, this, &LoginPage::LoginButtonClicked);
     connect(ui->button_Register, &QPushButton::clicked, this, &LoginPage::RegisterButtonClicked);
-
-    // Connect signal of successful login to setup posts in the HomePage
-    connect(this, SIGNAL(SuccessfulLogin()), p_MainWindow->GetPointerToHomePage(), SLOT(SetupPostsOnSuccessfulLogin()));
 }
 
 LoginPage::~LoginPage()
@@ -46,11 +42,9 @@ void LoginPage::LoginButtonClicked()
 
     // Test if login successful
     bool result = core->SubmitLogin(Email, Password);
-    cout << result << endl;
     if (result)
     {
         // If login successful
-        emit SuccessfulLogin();
         p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
     }
     else
@@ -64,6 +58,4 @@ void LoginPage::RegisterButtonClicked()
 {
     // Go to register page
     p_MainWindow->ChangePage(MainWindow::PageIndex::REGISTER_PAGE);
-
-    // Setting up posts for respective user
 }
