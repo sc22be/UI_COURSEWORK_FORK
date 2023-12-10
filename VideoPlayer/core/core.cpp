@@ -5,6 +5,12 @@
 #include <QDateTime>
 #include <regex>
 
+/**
+ * @author ...
+ * @author Brent Edington
+ * @author ...
+*/
+
 Core::Core(const CoreArgs& args)
 {
     std::cout << "Path to assets: " << args.m_AssetsFolderPath << std::endl;

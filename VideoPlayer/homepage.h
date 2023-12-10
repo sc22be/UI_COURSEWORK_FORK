@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "core/user.h"
+#include "core/countdown.h"
 
 class QPushButton;
 class MainWindow;
@@ -24,6 +25,7 @@ public slots:
 private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
+    countdown timer;
 };
 
 #endif // HOMEPAGE_H

@@ -49,4 +49,5 @@ MainWindow::~MainWindow()
 void MainWindow::ChangePage(PageIndex page)
 {
     ui->stackedWidget->setCurrentIndex(page);
+    emit pageChange(page);
 }
