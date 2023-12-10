@@ -51,7 +51,7 @@ border: none;</string>
     </widget>
    </item>
    <item>
-    <widget class="QScrollArea" name="scrollAreaForPosts">
+    <widget class="QScrollArea" name="sa_Posts">
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -61,7 +61,7 @@ border: none;</string>
         <x>0</x>
         <y>0</y>
         <width>390</width>
-        <height>395</height>
+        <height>394</height>
        </rect>
       </property>
      </widget>

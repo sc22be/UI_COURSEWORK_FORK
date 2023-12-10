@@ -13,6 +13,8 @@ SOURCES += \
     core/core.cpp \
     core/settings.cpp \
     core/user.cpp \
+    core/video/post.cpp \
+    core/video/video.cpp \
     core/videodb.cpp \
     homepage.cpp \
     loginpage.cpp \
@@ -26,6 +28,8 @@ HEADERS += \
     core/core.h \
     core/settings.h \
     core/user.h \
+    core/video/post.h \
+    core/video/video.h \
     core/videodb.h \
     homepage.h \
     loginpage.h \
@@ -34,6 +38,7 @@ HEADERS += \
     registerpage.h
 
 FORMS += \
+    core/video/post.ui \
     homepage.ui \
     loginpage.ui \
     mainwindow.ui \
