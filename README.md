@@ -14,7 +14,7 @@ Install gstreamer(needs plugins-good to run so can only install that depending o
 zypper/dnf/pacman/apt install gstreamer
 ```
 #### Windows:
-... idk
+No extra packages needed to run
 
 ### Qt
 Install Qt Creator with Qt 5.15
