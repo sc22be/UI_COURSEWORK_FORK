@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include "core/countdown.h"
 #include <QDebug>
+#include <QMessageBox>
 
 /**
  * @author Mustafa Yozgyur
@@ -50,7 +51,15 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     {
         timerLabel->setStyleSheet(style);
     });
-    timer.StartCountdown(65);
+    // On screen change
+    QObject::connect(p_MainWindow, &MainWindow::pageChange, [this](const int pageIndex)
+    {
+        if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
+        {
+            timer.StartCountdown(120); // In seconds
+            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+        }
+    });
 }
 
 HomePage::~HomePage()

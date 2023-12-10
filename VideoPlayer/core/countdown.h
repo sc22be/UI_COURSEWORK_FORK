@@ -18,7 +18,8 @@ public:
     void StartCountdown(int duration);
 
     // Timer variables
-    bool isCountdown = true;
+    bool isCountdown = false;
+    bool isFirst = true;
     std::string timerText;
 
 signals:

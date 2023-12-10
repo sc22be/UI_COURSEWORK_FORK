@@ -16,7 +16,6 @@ countdown::countdown(QObject *parent) : QObject(parent)
 
     // Setup signal and function per second
     connect(timer, SIGNAL(timeout()), this, SLOT(OnSecond()));
-    StartCountdown(10);
 }
 
 void countdown::StartCountdown(int duration)
@@ -27,11 +26,11 @@ void countdown::StartCountdown(int duration)
     isCountdown = true;
     // Set timer duration
     secondsRem = duration;
+    // For protype, have timer run when home page is
+    // opened so only once during the app's existence
+    isFirst = false;
     // Timer is in ms, want to trigger every 1s (1000ms)
     timer->start(1000);
-    // Push Notificaion via qDialog (button to record video)
-    // Tint of countdown gradient at one minute left
-    // Count up once timer hits zero
 }
 
 void countdown::StopTimer()
