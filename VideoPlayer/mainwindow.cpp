@@ -49,4 +49,39 @@ MainWindow::~MainWindow()
 void MainWindow::ChangePage(PageIndex page)
 {
     ui->stackedWidget->setCurrentIndex(page);
+
+    // Lazy switch statement for now :)
+    switch (page)
+    {
+        case HOME_PAGE: {
+            p_HomePage->OnPageEnter();
+            break;
+        }
+
+        case LOGIN_PAGE: {
+            p_LoginPage->OnPageEnter();
+            break;
+        }
+
+        case PROFILE_PAGE: {
+            p_ProfilePage->OnPageEnter();
+            break;
+        }
+
+        case REGISTER_PAGE: {
+            p_RegisterPage->OnPageEnter();
+            break;
+        }
+
+        default: {}
+    }
+
+    /*
+    TODO:
+    m_Pages[page].OnPageEnter();
+
+    where "m_Pages" is a vector of pages
+    */
+
+    emit pageChange(page);
 }

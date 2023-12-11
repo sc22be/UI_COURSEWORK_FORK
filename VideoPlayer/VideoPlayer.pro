@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     core/application.cpp \
     core/core.cpp \
+    core/countdown.cpp \
     core/settings.cpp \
     core/user.cpp \
     core/video/post.cpp \
@@ -20,12 +21,14 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    page.cpp \
     profilepage.cpp \
     registerpage.cpp
 
 HEADERS += \
     core/application.h \
     core/core.h \
+    core/countdown.h \
     core/settings.h \
     core/user.h \
     core/video/post.h \
@@ -34,6 +37,7 @@ HEADERS += \
     homepage.h \
     loginpage.h \
     mainwindow.h \
+    page.h \
     profilepage.h \
     registerpage.h
 

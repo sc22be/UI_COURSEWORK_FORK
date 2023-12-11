@@ -7,6 +7,7 @@
 */
 
 #include <QWidget>
+#include "page.h"
 
 class QPushButton;
 class MainWindow;
@@ -15,7 +16,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui {class RegisterPage;}
 QT_END_NAMESPACE
 
-class RegisterPage : public QWidget
+class RegisterPage : public QWidget, public Page
 {
     Q_OBJECT
 
@@ -29,6 +30,8 @@ private slots:
 private:
     MainWindow* p_MainWindow;
     Ui::RegisterPage* ui;
+public:
+    virtual void OnPageEnter() override {}
 };
 
 #endif // REGISTERPAGE_H
