@@ -8,6 +8,7 @@
 
 #include <QWidget>
 #include "core/user.h"
+#include "page.h"
 
 class QPushButton;
 class MainWindow;
@@ -16,7 +17,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class ProfilePage; }
 QT_END_NAMESPACE
 
-class ProfilePage : public QWidget
+class ProfilePage : public QWidget, public Page
 {
     Q_OBJECT
 public:
@@ -30,7 +31,8 @@ public slots:
 private:
     MainWindow* p_MainWindow;
     Ui::ProfilePage* ui;
-
+public:
+    virtual void OnPageEnter() override {}
 };
 
 #endif // PROFILEPAGE_H
