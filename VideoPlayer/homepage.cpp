@@ -2,6 +2,7 @@
 #include "ui_homepage.h"
 
 #include "mainwindow.h"
+#include <iostream>
 #include "core/countdown.h"
 #include <QDebug>
 #include <QMessageBox>
@@ -73,6 +74,11 @@ void HomePage::ProfileButtonClicked()
 {
     // Switch pages
     p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
+}
+
+void HomePage::OnPageEnter()
+{
+    std::cout << "Homepage enter" << std::endl;
 }
 
 //void HomePage::setupPosts()

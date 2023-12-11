@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "core/user.h"
+#include "page.h"
 #include "core/countdown.h"
 
 class QPushButton;
@@ -12,7 +13,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class HomePage; }
 QT_END_NAMESPACE
 
-class HomePage : public QWidget
+class HomePage : public QWidget, public Page
 {
     Q_OBJECT
 public:
@@ -26,6 +27,9 @@ private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
     countdown timer;
+public:
+
+    virtual void OnPageEnter() override;
 };
 
 #endif // HOMEPAGE_H
