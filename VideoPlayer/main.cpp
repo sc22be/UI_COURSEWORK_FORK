@@ -5,6 +5,7 @@
 #include <QFile>
 #include <iostream>
 #include <QString>
+#include <QTranslator>
 
 /**
  * @author Mustafa Yozgyur
@@ -22,6 +23,12 @@ int main(int argc, char *argv[])
     QString style_sheet = QLatin1String(file.readAll());
     file.close();
     a.setStyleSheet(style_sheet);
+
+    // Translator
+    QTranslator translator;
+    translator.load(":/translations/staysimple_en.qm");
+    a.installTranslator(&translator);
+    QObject::tr("Testing");
 
     MainWindow w(nullptr);
     w.show();
