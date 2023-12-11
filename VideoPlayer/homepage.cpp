@@ -71,6 +71,6 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     // }
 
     // FOR TESTING, DISPLAYING 1 VIDEO ONLY
-    Post* post = new Post(nullptr, core->GetUser(), &videos[0]);
+    Post* post = new Post(nullptr, core->GetUser(), &videos[3]);
     ui->w_PostsWidget->layout()->addWidget(post);
 }

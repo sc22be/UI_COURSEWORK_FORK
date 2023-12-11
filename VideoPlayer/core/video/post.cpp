@@ -18,6 +18,8 @@ Post::Post(QWidget *parent, User* user, Video* video)
     connect(ui->slider_Slider, SIGNAL(valueChanged(int)), this, SLOT(SetPosition(int)));
     connect(&m_MediaPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(UpdateDuration(qint64)));
     connect(&m_MediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(UpdatePosition(qint64)));
+    connect(&m_MediaPlayer, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)), this, SLOT(MediaStateChanged(QMediaPlayer::MediaStatus)));
+    connect(&m_MediaPlayer, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(MediaPlayerError(QMediaPlayer::Error)));
 
     // Connect like button
     connect(ui->button_Like, SIGNAL(clicked()), this, SLOT(ChangeLikeButtonStatus()));
@@ -25,7 +27,6 @@ Post::Post(QWidget *parent, User* user, Video* video)
     // Setup media player
     m_MediaPlayer.setMedia(video->GetURL());
     m_MediaPlayer.setVideoOutput(ui->vp_MediaPlayer);
-    m_MediaPlayer.play();
 
     // Set text of lables
     ui->label_Username->setText(std::string("@").append(user->GetUsername()).c_str());
@@ -39,16 +40,39 @@ Post::~Post()
 
 void Post::UpdateDuration(qint64 duration)
 {
+    std::cout << "UpdateDuration" << std::endl;
     ui->slider_Slider->setMaximum(static_cast<int>(duration));
 }
 
 void Post::UpdatePosition(qint64 position)
 {
+    std::cout << "UpdatePosition" << std::endl;
     ui->slider_Slider->setValue(static_cast<int>(position));
+}
+
+void Post::MediaStateChanged(QMediaPlayer::MediaStatus status)
+{
+    std::cout << "status: " << status << std::endl;
+
+    if (status == QMediaPlayer::MediaStatus::LoadingMedia)
+    {
+        std::cout << "Loading" << std::endl;
+    }
+
+    if (status == QMediaPlayer::MediaStatus::LoadedMedia)
+    {
+        m_MediaPlayer.play();
+    }
+}
+
+void Post::MediaPlayerError(QMediaPlayer::Error e)
+{
+    std::cout << "ERROR: " << e << std::endl;
 }
 
 void Post::SetPosition(int position)
 {
+    std::cout << "SetPosition" << std::endl;
     m_MediaPlayer.setPosition(static_cast<qint64>(position));
     m_MediaPlayer.play();
 }
