@@ -54,6 +54,7 @@ enum Register
     NOUPPER,
     NOLOWER,
     NONUM,
+    NOTEMAIL,
     NOSYMBOL
 };
 
