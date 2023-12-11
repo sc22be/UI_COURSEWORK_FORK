@@ -32,7 +32,7 @@ VideoDB::VideoDB(std::string path_to_videos) :
     // List of file extensions to look for:
     std::vector<QString> extensions = {".MOV", ".mp4"};
 #ifdef _WIN32
-    extension.push_back(".wmv");
+    extensions.push_back(".wmv");
 #endif
 
     QDir videos_dir = QDir(m_PathToVideos.c_str());
