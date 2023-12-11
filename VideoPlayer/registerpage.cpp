@@ -61,6 +61,9 @@ void RegisterPage::RegisterButtonClicked()
             // Pop up to say too young
             QMessageBox::critical(this, tr("Register Account Failed"), tr("You must be atleast 13 years old to create an account!"));
             break;
+        case Register::NOTEMAIL:
+            QMessageBox::critical(this, "Register Account Failed", "Please enter a valid Email!");
+            break;
         case Register::SHORTPASS:
             // Pop up to say pass word needs to be atleast 8 characters
             QMessageBox::critical(this, tr("Register Account Failed"), tr("Password must be atleast 8 characters long!"));

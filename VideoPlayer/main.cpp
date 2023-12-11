@@ -15,7 +15,10 @@
 
 int main(int argc, char *argv[])
 {
-    Application a(argc, argv);
+    // Initialise core
+    Application::instance()->InitialiseCore(argc, argv);
+
+    QApplication a(argc, argv);
     a.setStyleSheet(":/VideoPlayer.qss");
 
     // Set global stylesheet

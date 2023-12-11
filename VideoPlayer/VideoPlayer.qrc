@@ -9,5 +9,8 @@
         <file>assets/translations/staysimple_en_US.ts</file>
         <file>assets/translations/staysimple_tr.qm</file>
         <file>assets/translations/staysimple_tr.ts</file>
+        <file>assets/button_images/likeButtonOff.jpg</file>
+        <file>assets/button_images/likeButtonOn.jpg</file>
+        <file>assets/button_images/commentsButton.jpg</file>
     </qresource>
 </RCC>
