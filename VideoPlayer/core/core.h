@@ -53,8 +53,8 @@ enum Register
     SHORTPASS,
     NOUPPER,
     NOLOWER,
-    NONUM
-    //NOSYMBOL TBD
+    NONUM,
+    NOSYMBOL
 };
 
 #endif // CORE_H
