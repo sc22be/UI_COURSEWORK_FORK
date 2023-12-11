@@ -54,4 +54,6 @@ DISTFILES += \
 RESOURCES += \
     VideoPlayer.qrc
 
-TRANSLATIONS = translations/staysimple_en.ts translations/staysimple_de.ts
+TRANSLATIONS = assets/translations/staysimple_en_US.ts \
+    assets/translations/staysimple_tr.ts \
+    assets/translations/staysimple_en_GB.ts
