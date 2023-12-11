@@ -6,7 +6,6 @@
 #include "page.h"
 #include "core/countdown.h"
 
-class QPushButton;
 class MainWindow;
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +21,7 @@ public:
 
 public slots:
     void ProfileButtonClicked();
+    void SetupPostsOnSuccessfulLogin();
 
 private:
     MainWindow* p_MainWindow;

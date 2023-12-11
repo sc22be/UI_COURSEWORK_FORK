@@ -26,22 +26,24 @@ class Core
 
 public:
     Core(const CoreArgs& args);
+    ~Core();
+
     bool SubmitLogin(std::string email, std::string password);
     int RegisterAccount(std::string username, std::string password, std::string email, QDateTime birthday);
 
     // Getters
-    inline Settings* GetSettings() { return &m_Settings; }
-    inline User* GetUser() { return &m_User; }
-    inline VideoDB* GetVideoDB() { return &m_VideoDB; }
+    inline Settings* GetSettings() { return m_Settings; }
+    inline User* GetUser() { return m_User; }
+    inline VideoDB* GetVideoDB() { return m_VideoDB; }
 
 private:
 
     std::string m_AssetsPath = "";
 
     // Core related classes
-    Settings m_Settings;
-    User m_User;
-    VideoDB m_VideoDB;
+    Settings* m_Settings;
+    User* m_User;
+    VideoDB* m_VideoDB;
 };
 
 // Enums for different return states for the register function

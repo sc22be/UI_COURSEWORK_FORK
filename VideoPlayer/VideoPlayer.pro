@@ -1,8 +1,8 @@
-QT       += core gui
+QT       += core gui widgets multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -14,6 +14,8 @@ SOURCES += \
     core/countdown.cpp \
     core/settings.cpp \
     core/user.cpp \
+    core/video/post.cpp \
+    core/video/video.cpp \
     core/videodb.cpp \
     homepage.cpp \
     loginpage.cpp \
@@ -29,6 +31,8 @@ HEADERS += \
     core/countdown.h \
     core/settings.h \
     core/user.h \
+    core/video/post.h \
+    core/video/video.h \
     core/videodb.h \
     homepage.h \
     loginpage.h \
@@ -38,6 +42,7 @@ HEADERS += \
     registerpage.h
 
 FORMS += \
+    core/video/post.ui \
     homepage.ui \
     loginpage.ui \
     mainwindow.ui \

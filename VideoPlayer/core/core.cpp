@@ -18,9 +18,29 @@ Core::Core(const CoreArgs& args)
     m_AssetsPath = args.m_AssetsFolderPath;
 
     // Initialise user
-    m_User.SetUsername("Test");
-    m_User.SetEmail("test@test.com");
-    m_User.SetPassword("password");
+    m_User = new User();
+    m_User->SetUsername("Test");
+    m_User->SetEmail("test@test.com");
+    m_User->SetPassword("password");
+
+    // Add friends to user : TODO
+    // m_User.AddFriend("@DynoAbd786");
+    // m_User.AddFriend("@Brek");
+    // m_User.AddFriend("@Gamer");
+    // m_User.AddFriend("@xSarahVictoria");
+
+    // Initialise video player
+    m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+
+    // Initialise settings
+    m_Settings = new Settings();
+}
+
+Core::~Core()
+{
+    delete m_User;
+    delete m_VideoDB;
+    delete m_Settings;
 }
 
 // Account Authication
@@ -28,7 +48,7 @@ bool Core::SubmitLogin(std::string email, std::string password)
 {
 
     // Checks if strings are the same (returns 0) and sends to login screen
-    if(email.compare(m_User.GetEmail()) == 0 && password.compare(m_User.GetPassword()) == 0)
+    if(email.compare(m_User->GetEmail()) == 0 && password.compare(m_User->GetPassword()) == 0)
     {
         return true;
     }
@@ -109,8 +129,8 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
     }
 
     // After all checks, change user information and return 0 to change page
-    m_User.SetUsername(username);
-    m_User.SetEmail(email);
-    m_User.SetPassword(password);
+    m_User->SetUsername(username);
+    m_User->SetEmail(email);
+    m_User->SetPassword(password);
     return Register::SUCCESS;
 }

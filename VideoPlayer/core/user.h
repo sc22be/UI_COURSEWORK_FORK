@@ -20,9 +20,6 @@ public:
     const std::string GetPassword()          { return m_Password; }
     const std::string GetEmail()             { return m_Email; }
     const std::vector<User*> GetFriends()    { return m_FriendsList; } // could not relate more to this...     (dw im joking)
-    std::vector<User*> RetrieveFriendsList() { return m_FriendsList; }
-
-
 
     // setter methods
     void SetUsername(std::string user)  { m_Username = user; }
