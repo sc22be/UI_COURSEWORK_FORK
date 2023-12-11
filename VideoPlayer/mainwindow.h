@@ -45,6 +45,9 @@ public:
     */
     void ChangePage(PageIndex page);
 
+signals:
+    void pageChange(const int pageIndex);
+
 private:
     Ui::MainWindow *ui;
 

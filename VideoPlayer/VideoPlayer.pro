@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     core/application.cpp \
     core/core.cpp \
+    core/countdown.cpp \
     core/settings.cpp \
     core/user.cpp \
     core/videodb.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 HEADERS += \
     core/application.h \
     core/core.h \
+    core/countdown.h \
     core/settings.h \
     core/user.h \
     core/videodb.h \

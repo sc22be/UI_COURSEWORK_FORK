@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 
+#include "core/countdown.h"
 #include "core/application.h"
 #include <QFile>
 #include <iostream>
