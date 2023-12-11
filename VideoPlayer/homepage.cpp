@@ -90,7 +90,8 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     std::cout << "Homepage enter" << std::endl;
 
     ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
-}
+
+    Core* core = Application::instance()->GetCore();
 
 //void HomePage::setupPosts()
 //{
