@@ -57,7 +57,7 @@ enum Register
     NOLOWER,
     NONUM,
     NOTEMAIL,
-    //NOSYMBOL TBD
+    NOSYMBOL
 };
 
 #endif // CORE_H

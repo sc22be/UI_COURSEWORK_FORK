@@ -10,6 +10,7 @@
 #include "core/countdown.h"
 #include <QDebug>
 #include <QMessageBox>
+#include "core/application.h"
 
 /**
  * @author Mustafa Yozgyur
@@ -86,7 +87,11 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
-    Core* core = Application::instance()->GetCore();
+    std::cout << "Homepage enter" << std::endl;
+
+    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
+}
+
 //void HomePage::setupPosts()
 //{
 //    // TODO: retrieve posts by video
