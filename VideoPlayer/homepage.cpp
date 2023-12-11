@@ -2,6 +2,7 @@
 #include "ui_homepage.h"
 
 #include "mainwindow.h"
+#include <iostream>
 
 /**
  * @author Mustafa Yozgyur
@@ -45,6 +46,11 @@ void HomePage::ProfileButtonClicked()
 {
     // Switch pages
     p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
+}
+
+void HomePage::OnPageEnter()
+{
+    std::cout << "Homepage enter" << std::endl;
 }
 
 //void HomePage::setupPosts()
