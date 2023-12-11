@@ -28,8 +28,6 @@ static bool ContainsString(std::vector<QString> list, const QString& key)
 VideoDB::VideoDB(std::string path_to_videos) :
     m_PathToVideos(path_to_videos)
 {
-    std::cout << "Path to videos: " << m_PathToVideos << std::endl;
-
     // Discover videos in the directory
     // List of file extensions to look for:
     std::vector<QString> extensions = {".MOV", ".mp4"};
