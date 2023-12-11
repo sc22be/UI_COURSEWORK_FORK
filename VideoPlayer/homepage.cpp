@@ -3,10 +3,14 @@
 
 #include "mainwindow.h"
 #include <iostream>
+#include "core/countdown.h"
+#include <QDebug>
+#include <QMessageBox>
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
+ * @author Brent Edington
 */
 
 HomePage::HomePage(QWidget *parent, MainWindow* main_window)
@@ -33,8 +37,32 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 
 
     // End of addition
-
+    // Connect to profile page
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
+
+    // Label for timer
+    QLabel* timerLabel = ui->label_Timer;
+    ui->label_Timer->hide();
+    // Change text when signal given
+    QObject::connect(&timer, &countdown::timerChanged, [timerLabel](const QString& text)
+    {
+        timerLabel->setText(text);
+    });
+    // Change style when signal given
+    QObject::connect(&timer, &countdown::timerColorChange, [timerLabel](const QString& style)
+    {
+        timerLabel->setStyleSheet(style);
+    });
+    // On screen change
+    QObject::connect(p_MainWindow, &MainWindow::pageChange, [this](const int pageIndex)
+    {
+        if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
+        {
+            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+            this->ui->label_Timer->show();
+            timer.StartCountdown(120); // In seconds
+        }
+    });
 }
 
 HomePage::~HomePage()

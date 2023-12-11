@@ -83,4 +83,5 @@ void MainWindow::ChangePage(PageIndex page)
     where "m_Pages" is a vector of pages
     */
 
+    emit pageChange(page);
 }

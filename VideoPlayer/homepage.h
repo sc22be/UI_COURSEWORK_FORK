@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "core/user.h"
 #include "page.h"
+#include "core/countdown.h"
 
 class QPushButton;
 class MainWindow;
@@ -25,6 +26,7 @@ public slots:
 private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
+    countdown timer;
 public:
 
     virtual void OnPageEnter() override;

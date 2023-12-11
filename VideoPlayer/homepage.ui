@@ -51,6 +51,16 @@ border: none;</string>
     </widget>
    </item>
    <item>
+    <widget class="QLabel" name="label_Timer">
+     <property name="text">
+      <string>2:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QScrollArea" name="scrollArea">
      <property name="widgetResizable">
       <bool>true</bool>
@@ -60,8 +70,8 @@ border: none;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>390</width>
-        <height>395</height>
+        <width>384</width>
+        <height>351</height>
        </rect>
       </property>
      </widget>
