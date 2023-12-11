@@ -6,6 +6,7 @@
 #include "core/countdown.h"
 #include <QDebug>
 #include <QMessageBox>
+#include "core/application.h"
 
 /**
  * @author Mustafa Yozgyur
@@ -79,6 +80,8 @@ void HomePage::ProfileButtonClicked()
 void HomePage::OnPageEnter()
 {
     std::cout << "Homepage enter" << std::endl;
+
+    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
 }
 
 //void HomePage::setupPosts()
