@@ -89,13 +89,6 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
         // If password does not contain a number
         return Register::NONUM;
     }
-    /* TBD
-    else if (!std::regex_search(password, containsSymbol))
-    {
-        // If password does not contain a symbol
-        return Register::NOSYMBOL;
-    }
-    */
 
     // After all checks, change user information and return 0 to change page
     m_User.SetUsername(username);
