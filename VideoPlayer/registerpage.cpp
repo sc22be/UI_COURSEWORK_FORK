@@ -80,12 +80,10 @@ void RegisterPage::RegisterButtonClicked()
             // Pop up to say password needs a number
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one number!");
             break;
-        /* TBD
         case Register::NOSYMBOL:
             // Pop up to say password needs lowercase
             QMessageBox::critical(this, "Register Account Failed", "Password must contain atleast one symbol!");
             break;
-        */
     }
 
 }
