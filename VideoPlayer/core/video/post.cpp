@@ -28,7 +28,7 @@ Post::Post(QWidget *parent, User* user, Video* video)
 
     // Set text of lables
     ui->label_Username->setText(std::string("@").append(user->GetUsername()).c_str());
-    ui->label_Date->setText(video->GetDate().toString());
+    ui->label_Date->setText(video->GetDate().time().toString());
 }
 
 Post::~Post()
