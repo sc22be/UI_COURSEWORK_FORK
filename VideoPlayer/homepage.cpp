@@ -58,13 +58,19 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
+    Core* core = Application::instance()->GetCore();
+
     // Retrieve videos
-    std::vector<Video> videos = Application::instance()->GetCore()->GetVideoDB()->GetVideos();
+    std::vector<Video> videos = core->GetVideoDB()->GetVideos();
 
     // Add all the videos to the scroll view
-    for (auto& video : videos)
-    {
-        Post* post = new Post();
-        ui->w_PostsWidget->layout()->addWidget(post);
-    }
+    // for (auto& video : videos)
+    // {
+    //     Post* post = new Post(nullptr, core->GetUser(), &video);
+    //     ui->w_PostsWidget->layout()->addWidget(post);
+    // }
+
+    // FOR TESTING, DISPLAYING 1 VIDEO ONLY
+    Post* post = new Post(nullptr, core->GetUser(), &videos[0]);
+    ui->w_PostsWidget->layout()->addWidget(post);
 }

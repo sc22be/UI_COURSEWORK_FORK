@@ -2,6 +2,17 @@
 #define POST_H
 
 #include <QWidget>
+#include <QMediaPlayer>
+
+/**
+ * @brief This is the video player
+ * @author Mustafa Yozgyur
+ * @author Muhammad Kashif-Khan
+ */
+
+// Some forward declarations
+class User;
+class Video;
 
 namespace Ui {
 class Post;
@@ -12,20 +23,8 @@ class Post : public QWidget
     Q_OBJECT
 
 public:
-    explicit Post(QWidget *parent = nullptr);
+    explicit Post(QWidget *parent = nullptr, User* user = nullptr, Video* video = nullptr);
     ~Post();
-
-private:
-    Ui::Post *ui;
-};
-
-/*
-class PostWidget: public QWidget
-{
-    Q_OBJECT
-public:
-    // Constructor for PostWidget
-    PostWidget(std::string name, Video *videoData);
 
 public slots:
     // Post slots
@@ -35,31 +34,10 @@ public slots:
     void ChangeLikeButtonStatus();
 
 private:
-    // Functions to set up post class
-    void CreateWidgets(string name, HomePage::Video *videoData);
-    void ArrangeWidgets();
-    void MakeConnections();
+    Ui::Post *ui;
 
-
-
-    // Widgets
-    QLabel *m_NameLabel;
-    QLabel *m_TimeLabel;
-    QPushButton *m_LikeButton;
-    QPushButton *m_CommentsButton;
-    QSlider *m_SliderForVideoSeeking;
-    QVideoWidget *m_Video;
-    // And the respective video player
-    QMediaPlayer *m_MediaPlayer;
-
-    // Layouts to store the widgets and layouts to
-    QHBoxLayout *m_UserInformationLayout;
-    QVBoxLayout *m_VideoPlayerLayout;
-    QHBoxLayout *m_LikeAndCommentLayout;
-
-    QVBoxLayout *m_MainLayout;
-
+    // Media player
+    QMediaPlayer m_MediaPlayer;
 };
-*/
 
 #endif // POST_H
