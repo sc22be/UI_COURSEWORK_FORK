@@ -4,6 +4,11 @@
 #include <iostream>
 #include <QDateTime>
 #include <regex>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    #include <QRegularExpression>
+#else
+    #include <QRegExp>
+#endif
 
 /**
  * @author ...
@@ -84,12 +89,27 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
 
     // Check if email is valid
     // Create email formatting (requreing and @ and .)
-    QRegExp mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
-    mailFormat.setCaseSensitivity(Qt::CaseInsensitive);
-    mailFormat.setPatternSyntax(QRegExp::RegExp);
 
+    bool isEmail = false;
     // If not an email
-    bool isEmail = mailFormat.exactMatch(QString::fromStdString(email));
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QString emailStr = QString::fromStdString(email);
+        QRegularExpression mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+        mailFormat.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+
+        QRegularExpressionMatchIterator matchIterator = mailFormat.globalMatch(emailStr);
+        if (matchIterator.hasNext()) {
+            QRegularExpressionMatch match = matchIterator.next();
+            isEmail = match.hasMatch();
+        }
+    #else
+        QRegExp mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+        mailFormat.setCaseSensitivity(Qt::CaseInsensitive);
+        mailFormat.setPatternSyntax(QRegExp::RegExp);
+
+        // If not an email
+        isEmail = mailFormat.exactMatch(QString::fromStdString(email));
+    #endif
     if (!isEmail)
     {
         return Register::NOTEMAIL;

@@ -83,18 +83,20 @@ void countdown::OnSecond()
 QString countdown::GetTextColor()
 {
     int rgbColors[] = {255, 255, 255};
-    if (secondsRem <= 60 && secondsRem >= 30)
+    if ((secondsRem <= 60 && secondsRem >= 30) || (secondsRem == 1 && !isCountdown))
     {
-        float scalar = 102/30; // Difference/Seconds Rem
-
-        // Calculate new rgb values
-        for (int i = 1; i < 3; i++)
+        if (isCountdown)
         {
-            // This takes the scalar and multiplies it by how many seconds are left until we
-            // reach the desired rgb value
-            rgbColors[i] = rgbColors[i] - (scalar*(30-(secondsRem-30)));
-        }
+            float scalar = 102/30; // Difference/Seconds Rem
 
+            // Calculate new rgb values
+            for (int i = 1; i < 3; i++)
+            {
+                // This takes the scalar and multiplies it by how many seconds are left until we
+                // reach the desired rgb value
+                rgbColors[i] = rgbColors[i] - (scalar*(30-(secondsRem-30)));
+            }
+        }
         QString textColor = QString("color: rgb(%1, %2, %3);").arg(rgbColors[0]).arg(rgbColors[1]).arg(rgbColors[2]);
         return textColor;
     }

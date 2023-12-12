@@ -6,5 +6,6 @@
         <file>assets/button_images/likeButtonOff.jpg</file>
         <file>assets/button_images/likeButtonOn.jpg</file>
         <file>assets/button_images/commentsButton.jpg</file>
+        <file>assets/button_images/new_user.jpg</file>
     </qresource>
 </RCC>

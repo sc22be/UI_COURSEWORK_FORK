@@ -5,6 +5,7 @@
 #include "core/video/video.h"
 
 #include <iostream>
+#include <QtMultimedia/QMediaPlayer>
 
 Post::Post(QWidget *parent, User* user, Video* video)
     : QWidget(parent)
@@ -23,7 +24,11 @@ Post::Post(QWidget *parent, User* user, Video* video)
     connect(ui->button_Like, SIGNAL(clicked()), this, SLOT(ChangeLikeButtonStatus()));
 
     // Setup media player
-    m_MediaPlayer.setMedia(video->GetURL());
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        m_MediaPlayer.setSource(video->GetURL());
+    #else
+        m_MediaPlayer.setMedia(video->GetURL());
+    #endif
     m_MediaPlayer.setVideoOutput(ui->vp_MediaPlayer);
 
     // Set text of lables
