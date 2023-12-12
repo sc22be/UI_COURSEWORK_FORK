@@ -4,8 +4,11 @@
 #include <iostream>
 #include <QDateTime>
 #include <regex>
-#include <QRegularExpression>
-#include <QRegExp>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    #include <QRegularExpression>
+#else
+    #include <QRegExp>
+#endif
 
 /**
  * @author ...
