@@ -83,7 +83,7 @@ void countdown::OnSecond()
 QString countdown::GetTextColor()
 {
     int rgbColors[] = {255, 255, 255};
-    if (secondsRem <= 60 && secondsRem >= 30)
+    if (secondsRem <= 60 && secondsRem >= 30 && isCountdown)
     {
         float scalar = 102/30; // Difference/Seconds Rem
 
