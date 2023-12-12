@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QDateTime>
 #include <regex>
+#include <QRegularExpression>
 
 /**
  * @author ...
@@ -30,7 +31,34 @@ Core::Core(const CoreArgs& args)
     // m_User.AddFriend("@xSarahVictoria");
 
     // Initialise video player
-    m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+    #ifdef _WIN32
+        // Windows-specific code
+        std::cout << "Path to assets: " << args.m_AssetsFolderPath << std::endl;
+        std::string filePath = args.m_AssetsFolderPath;
+        int backslashCount = 0;
+        int index = -1;
+
+        // Find the sixth occurrence of backslash
+        for (int i = 0; i < filePath.length(); ++i) {
+            if (filePath.at(i) == '\\') {
+                backslashCount++;
+                if (backslashCount == 6) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        std::string trimmedPath = (index != std::string::npos) ? filePath.substr(0, index + 1) : filePath;
+        std::cout << "Trimmed path: " << trimmedPath.append("\\assets\\videos") << std::endl;
+
+        m_VideoDB = new VideoDB(trimmedPath);
+    #elif __APPLE__
+        // macOS-specific code
+        m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+    #else
+        m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+    #endif
+
 
     // Initialise settings
     m_Settings = new Settings();
@@ -84,12 +112,21 @@ int Core::RegisterAccount(std::string username, std::string password, std::strin
 
     // Check if email is valid
     // Create email formatting (requreing and @ and .)
-    QRegExp mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
-    mailFormat.setCaseSensitivity(Qt::CaseInsensitive);
-    mailFormat.setPatternSyntax(QRegExp::RegExp);
+    QRegularExpression mailFormat("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b");
+    mailFormat.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
 
+    bool isEmail = false;
+    QString emailStr = QString::fromStdString(email);
     // If not an email
-    bool isEmail = mailFormat.exactMatch(QString::fromStdString(email));
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QRegularExpressionMatchIterator matchIterator = mailFormat.globalMatch(emailStr);
+        if (matchIterator.hasNext()) {
+            QRegularExpressionMatch match = matchIterator.next();
+            isEmail = match.hasMatch();
+        }
+    #else
+        isEmail = mailFormat.exactMatch(QString::fromStdString(email));
+    #endif
     if (!isEmail)
     {
         return Register::NOTEMAIL;
