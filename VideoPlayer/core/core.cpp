@@ -31,34 +31,7 @@ Core::Core(const CoreArgs& args)
     // m_User.AddFriend("@xSarahVictoria");
 
     // Initialise video player
-    #ifdef _WIN32
-        // Windows-specific code
-        std::cout << "Path to assets: " << args.m_AssetsFolderPath << std::endl;
-        std::string filePath = args.m_AssetsFolderPath;
-        int backslashCount = 0;
-        int index = -1;
-
-        // Find the sixth occurrence of backslash
-        for (int i = 0; i < filePath.length(); ++i) {
-            if (filePath.at(i) == '\\') {
-                backslashCount++;
-                if (backslashCount == 6) {
-                    index = i;
-                    break;
-                }
-            }
-        }
-        std::string trimmedPath = (index != std::string::npos) ? filePath.substr(0, index + 1) : filePath;
-        std::cout << "Trimmed path: " << trimmedPath.append("\\assets\\videos") << std::endl;
-
-        m_VideoDB = new VideoDB(trimmedPath);
-    #elif __APPLE__
-        // macOS-specific code
-        m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
-    #else
-        m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
-    #endif
-
+    m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
 
     // Initialise settings
     m_Settings = new Settings();
