@@ -69,7 +69,7 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
         {
             QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
             this->ui->label_Timer->show();
-            timer.StartCountdown(120); // In seconds
+            timer.StartCountdown(300); // In seconds
         }
     });
 }
