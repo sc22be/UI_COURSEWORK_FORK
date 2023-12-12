@@ -19,13 +19,8 @@
         <translation>5:00</translation>
     </message>
     <message>
-        <location filename="../../homepage.ui" line="89"/>
+        <location filename="../../homepage.ui" line="92"/>
         <source>Upload Video</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../homepage.cpp" line="60"/>
-        <source>Time to record! Post a video to share with your friends!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -84,6 +79,34 @@
     <message>
         <location filename="../../mainwindow.ui" line="14"/>
         <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post</name>
+    <message>
+        <location filename="../../core/video/post.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished">StaySimple</translation>
+    </message>
+    <message>
+        <location filename="../../core/video/post.ui" line="23"/>
+        <source>U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/video/post.ui" line="43"/>
+        <source>DATE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/video/post.ui" line="73"/>
+        <source>like</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/video/post.ui" line="80"/>
+        <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -187,11 +210,11 @@
     <message>
         <location filename="../../registerpage.cpp" line="58"/>
         <location filename="../../registerpage.cpp" line="62"/>
-        <location filename="../../registerpage.cpp" line="66"/>
-        <location filename="../../registerpage.cpp" line="70"/>
-        <location filename="../../registerpage.cpp" line="74"/>
-        <location filename="../../registerpage.cpp" line="78"/>
-        <location filename="../../registerpage.cpp" line="82"/>
+        <location filename="../../registerpage.cpp" line="69"/>
+        <location filename="../../registerpage.cpp" line="73"/>
+        <location filename="../../registerpage.cpp" line="77"/>
+        <location filename="../../registerpage.cpp" line="81"/>
+        <location filename="../../registerpage.cpp" line="85"/>
         <source>Register Account Failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -206,27 +229,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../registerpage.cpp" line="66"/>
+        <location filename="../../registerpage.cpp" line="69"/>
         <source>Password must be atleast 8 characters long!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../registerpage.cpp" line="70"/>
+        <location filename="../../registerpage.cpp" line="73"/>
         <source>Password must contain atleast one uppercase character!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../registerpage.cpp" line="74"/>
+        <location filename="../../registerpage.cpp" line="77"/>
         <source>Password must contain atleast one lowercase character!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../registerpage.cpp" line="78"/>
+        <location filename="../../registerpage.cpp" line="81"/>
         <source>Password must contain atleast one number!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../registerpage.cpp" line="82"/>
+        <location filename="../../registerpage.cpp" line="85"/>
         <source>Password must contain atleast one symbol!</source>
         <translation type="unfinished"></translation>
     </message>
