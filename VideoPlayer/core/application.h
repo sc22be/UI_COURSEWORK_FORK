@@ -26,7 +26,6 @@ private:
 
     Application();
     virtual ~Application();
-    static QApplication* m_appInstance;
 
     Core* m_Core = nullptr;
 
