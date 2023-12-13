@@ -90,7 +90,6 @@ void MainWindow::ChangePage(PageIndex page)
 
 void MainWindow::ChangeLang(QString lang)
 {
-    qDebug() << "change: " << lang;
     if (lang == "English (GB)")
     {
         translator.load(":/assets/translations/staysimple_en_GB.qm");
@@ -101,10 +100,8 @@ void MainWindow::ChangeLang(QString lang)
     }
     else if (lang == "Turkish")
     {
-        qDebug() << "Changed";
         translator.load(":/assets/translations/staysimple_tr.qm");
     }
-    qDebug() << "Install";
 
     QCoreApplication::installTranslator(&translator);
     emit langChange();

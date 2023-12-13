@@ -76,3 +76,16 @@ QDateEdit
     color: white;
     padding: 7px;
 }
+
+QComboBox
+{
+    font-size: 12px;
+    border: 1px solid white;
+    color: white;
+    padding: 2px;
+}
+
+QComboBox QAbstractItemView
+{
+    color: white;
+}
