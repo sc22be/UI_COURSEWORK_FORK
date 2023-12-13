@@ -10,6 +10,7 @@
 #include "core/countdown.h"
 #include <QDebug>
 #include <QMessageBox>
+#include <QResizeEvent>
 #include "core/application.h"
 
 /**
@@ -28,8 +29,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     // Connect to profile page
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
 
-    // Display posts
-    SetupPostsOnSuccessfulLogin();
+    // Connect upload video button
+    connect(ui->button_UploadVideo, &QPushButton::clicked, this, &HomePage::UploadButtonClicked);
+
     // Label for timer
     QLabel* timerLabel = ui->label_Timer;
     ui->label_Timer->hide();
@@ -56,34 +58,68 @@ void HomePage::ProfileButtonClicked()
     p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
 }
 
+void HomePage::UploadButtonClicked()
+{
+    // for now, just display videos straight away
+
+    // TODO: dialog box saying "u uploaded a video"
+
+    ui->sw_Posts->setCurrentIndex(1);
+    SetupPostsOnSuccessfulLogin();
+}
+
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
-    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
+    std::cout << "Creating video players" << std::endl;
 
     Core* core = Application::instance()->GetCore();
-
-//void HomePage::setupPosts()
-//{
-//    // TODO: retrieve posts by video
 
     // Retrieve videos
     std::vector<Video> videos = core->GetVideoDB()->GetVideos();
 
     // Add all the videos to the scroll view
-    // for (auto& video : videos)
-    // {
-    //     Post* post = new Post(nullptr, core->GetUser(), &video);
-    //     ui->w_PostsWidget->layout()->addWidget(post);
-    // }
+    for (auto& video : videos)
+    {
+        Post* post = new Post(nullptr, core->GetUser(), &video);
+        ui->w_PostsWidget->layout()->addWidget(post);
+        post->show();
+    }
 
-    // FOR TESTING, DISPLAYING 1 VIDEO ONLY
-    Post* post = new Post(nullptr, core->GetUser(), &videos[3]);
-    ui->w_PostsWidget->layout()->addWidget(post);
+    // Make the posts correct size
+    ResizePosts();
+}
+
+void HomePage::ResizePosts()
+{
+    int total_height = 0;
+    QLayout* layout = ui->w_PostsWidget->layout();
+    for (int i = 0; i < layout->count(); i++)
+    {
+        // Set post max size
+        QWidget* post = layout->itemAt(i)->widget();
+
+        post->setMaximumWidth(ui->scrollArea->width() - 50);
+        post->setMaximumHeight(ui->scrollArea->height());
+
+        total_height += post->height();
+        std::cout << "height: " << total_height << std::endl;
+    }
+
+    // Resize posts' parent widget to get scroll working
+    ui->w_PostsWidget->resize(ui->w_Videos->width(), total_height);
+}
+
+void HomePage::resizeEvent(QResizeEvent *e)
+{
+    ResizePosts();
 }
 
 void HomePage::OnPageEnter()
 {
     std::cout << "Homepage enter" << std::endl;
+
+    // Display correct username
+    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
 
     ui->label_Timer->show();
     QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
