@@ -102,7 +102,6 @@ void HomePage::ResizePosts()
         post->setMaximumHeight(ui->scrollArea->height());
 
         total_height += post->height();
-        std::cout << "height: " << total_height << std::endl;
     }
 
     // Resize posts' parent widget to get scroll working
