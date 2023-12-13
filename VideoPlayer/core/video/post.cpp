@@ -92,17 +92,23 @@ void Post::PlayPauseClicked()
     switch (m_MediaPlayer.state())
     {
         case (QMediaPlayer::State::PlayingState) : {
+            std::cout << "pausing" << std::endl;
             m_MediaPlayer.pause();
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/play_button.jpg)");
             break;
         }
 
         case (QMediaPlayer::State::PausedState) : {
+            std::cout << "playing" << std::endl;
             m_MediaPlayer.play();
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/pause_button.jpg)");
             break;
         }
 
         case (QMediaPlayer::State::StoppedState) : {
             // restart video
+            std::cout << "re playing" << std::endl;
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/pause_button.jpg)");
             m_MediaPlayer.setPosition(0);
             m_MediaPlayer.play();
             break;
