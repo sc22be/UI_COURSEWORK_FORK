@@ -62,6 +62,9 @@ border: none;</string>
    </item>
    <item>
     <widget class="QStackedWidget" name="sw_Posts">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
