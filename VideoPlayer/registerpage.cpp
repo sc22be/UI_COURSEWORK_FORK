@@ -23,11 +23,6 @@ RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window)
     // Connect button
     connect(ui->registerButton, &QPushButton::clicked, this, &RegisterPage::RegisterButtonClicked);
 
-    // Set default date
-    QDate today = QDate::currentDate();
-    QDate modTodaysDate = today.addYears(-13);
-    ui->date_Birthday->setDate(modTodaysDate);
-
     // Translate
     connect(p_MainWindow, &MainWindow::langChange, this, &RegisterPage::ChangeLang);
 }
@@ -94,4 +89,17 @@ void RegisterPage::RegisterButtonClicked()
 void RegisterPage::ChangeLang()
 {
     ui->retranslateUi(this);
+}
+
+void RegisterPage::OnPageEnter()
+{
+    ui->text_Email->clear();
+    ui->text_Password->clear();
+    ui->text_Username->clear();
+
+    // Set default date
+    QDate today = QDate::currentDate();
+    QDate modTodaysDate = today.addYears(-13);
+    ui->date_Birthday->setDate(modTodaysDate);
+
 }

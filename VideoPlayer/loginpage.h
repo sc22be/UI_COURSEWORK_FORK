@@ -35,7 +35,7 @@ private:
     void ChangeLang();
 
 public:
-    virtual void OnPageEnter() override {};
+    virtual void OnPageEnter() override;
 };
 
 #endif // LOGINPAGE_H
