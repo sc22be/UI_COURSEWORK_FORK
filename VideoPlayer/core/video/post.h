@@ -35,6 +35,8 @@ public slots:
     void SetPosition(int position);
     void ChangeLikeButtonStatus();
 
+    void PlayPauseClicked();
+
 private:
     Ui::Post *ui;
 

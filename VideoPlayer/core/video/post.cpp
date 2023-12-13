@@ -23,6 +23,9 @@ Post::Post(QWidget *parent, User* user, Video* video)
     // Connect like button
     connect(ui->button_Like, SIGNAL(clicked()), this, SLOT(ChangeLikeButtonStatus()));
 
+    // Connect play pause button
+    connect(ui->button_PlayPause, SIGNAL(clicked()), this, SLOT(PlayPauseClicked()));
+
     // Setup media player
     #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         m_MediaPlayer.setSource(video->GetURL());
@@ -55,7 +58,7 @@ void Post::MediaStateChanged(QMediaPlayer::MediaStatus status)
 {
     if (status == QMediaPlayer::MediaStatus::LoadedMedia)
     {
-        m_MediaPlayer.play();
+        // m_MediaPlayer.play();
     }
 }
 
@@ -81,5 +84,28 @@ void Post::ChangeLikeButtonStatus()
     {
         ui->button_Like->setIcon(QIcon(":/assets/button_images/likeButtonOff.jpg"));
         ui->button_Like->setCheckable(false);
+    }
+}
+
+void Post::PlayPauseClicked()
+{
+    switch (m_MediaPlayer.state())
+    {
+        case (QMediaPlayer::State::PlayingState) : {
+            m_MediaPlayer.pause();
+            break;
+        }
+
+        case (QMediaPlayer::State::PausedState) : {
+            m_MediaPlayer.play();
+            break;
+        }
+
+        case (QMediaPlayer::State::StoppedState) : {
+            // restart video
+            m_MediaPlayer.setPosition(0);
+            m_MediaPlayer.play();
+            break;
+        }
     }
 }
