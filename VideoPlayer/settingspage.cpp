@@ -18,8 +18,12 @@ SettingsPage::SettingsPage(QWidget *parent, MainWindow* window) :
 {
     ui->setupUi(this);
 
+    // Get core
+    Core* core = Application::instance()->GetCore();
+
     // Connect dropdowns
     connect(ui->box_notify, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &SettingsPage::OnNotifyChange);
+    ui->box_lang->setCurrentIndex(core->GetSettings()->lang);
     connect(ui->box_lang, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &SettingsPage::OnLangChange);
 
     // Connect buttons
@@ -54,9 +58,11 @@ void SettingsPage::OnNotifyChange(int index)
 
 void SettingsPage::OnLangChange(int index)
 {
-    Q_UNUSED(index);
+    // Get core
+    Core* core = Application::instance()->GetCore();
 
     QString selectedLang = ui->box_lang->currentText();
+    core->GetSettings()->lang = index;
     p_MainWindow->ChangeLang(selectedLang);
 }
 
@@ -81,5 +87,9 @@ void SettingsPage::HowtoClicked()
 // Translate
 void SettingsPage::ChangeLang()
 {
+    // Change default
+    Core* core = Application::instance()->GetCore();
+    ui->box_lang->setCurrentIndex(core->GetSettings()->lang);
+    // Reload
     ui->retranslateUi(this);
 }
