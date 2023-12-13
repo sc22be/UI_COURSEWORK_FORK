@@ -21,6 +21,7 @@ public:
 
 public slots:
     void ProfileButtonClicked();
+    void UploadButtonClicked();
     void SetupPostsOnSuccessfulLogin();
 
 private:
@@ -29,8 +30,11 @@ private:
     countdown timer;
     void ChangeLang();
 
+    // Resize posts when screen is resized
+    void ResizePosts();
 public:
 
+    void resizeEvent(QResizeEvent* e) override;
     virtual void OnPageEnter() override;
 };
 

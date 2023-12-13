@@ -44,6 +44,9 @@ private:
     Settings* m_Settings;
     User* m_User;
     VideoDB* m_VideoDB;
+
+    // Friends pool
+    std::array<User, 4> m_Users;
 };
 
 // Enums for different return states for the register function
