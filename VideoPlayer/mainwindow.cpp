@@ -56,6 +56,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::ChangePage(PageIndex page)
 {
+    PageIndex from = static_cast<PageIndex>(ui->stackedWidget->currentIndex());
     ui->stackedWidget->setCurrentIndex(page);
 
     // Lazy switch statement for now :)
@@ -96,7 +97,7 @@ void MainWindow::ChangePage(PageIndex page)
     where "m_Pages" is a vector of pages
     */
 
-    emit pageChange(page);
+    emit PageChange(from, page);
 }
 
 void MainWindow::ChangeLang(QString lang)

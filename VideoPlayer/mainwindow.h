@@ -52,7 +52,7 @@ public:
     void ChangeLang(QString lang);
 
 signals:
-    void pageChange(const int pageIndex);
+    void PageChange(MainWindow::PageIndex from, MainWindow::PageIndex to);
     void langChange();
 
 private:

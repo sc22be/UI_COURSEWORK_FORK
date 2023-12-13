@@ -5,8 +5,7 @@
 #include "core/user.h"
 #include "page.h"
 #include "core/countdown.h"
-
-class MainWindow;
+#include "mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HomePage; }
@@ -23,11 +22,16 @@ public slots:
     void ProfileButtonClicked();
     void UploadButtonClicked();
     void SetupPostsOnSuccessfulLogin();
+    void PageChanged(MainWindow::PageIndex from, MainWindow::PageIndex to);
 
 private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
     countdown timer;
+
+    // Has the user uploaded their video?
+    bool b_UploadedVideo = false;
+
     void ChangeLang();
 
     // Resize posts when screen is resized
