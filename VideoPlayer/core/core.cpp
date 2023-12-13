@@ -48,7 +48,7 @@ Core::Core(const CoreArgs& args)
 
     // Initialise video player
 #ifdef _WIN32
-    m_VideoDB = new VideoDB(m_AssetsPath.append("\videos"));
+    m_VideoDB = new VideoDB(m_AssetsPath.append("\\videos"));
 #else
     m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
 #endif
