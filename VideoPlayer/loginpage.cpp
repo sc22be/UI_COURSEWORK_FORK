@@ -76,6 +76,14 @@ void LoginPage::OnLangChange(int index)
     p_MainWindow->ChangeLang(selectedLang);
 }
 
+
+
+void LoginPage::OnPageEnter()
+{
+    ui->text_Email->clear();
+    ui->text_Password->clear();
+}
+
 void LoginPage::ChangeLang()
 {
     // Change default
