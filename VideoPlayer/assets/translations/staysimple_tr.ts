@@ -6,7 +6,7 @@
     <message>
         <location filename="../../homepage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../homepage.ui" line="46"/>
@@ -14,14 +14,24 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../../homepage.ui" line="56"/>
-        <source>2:00</source>
-        <translation>5:00</translation>
+        <location filename="../../homepage.ui" line="53"/>
+        <source>3:00</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../homepage.ui" line="92"/>
+        <location filename="../../homepage.ui" line="90"/>
         <source>Upload Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video Yükle</translation>
+    </message>
+    <message>
+        <location filename="../../homepage.cpp" line="71"/>
+        <source>StaySimple</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../homepage.cpp" line="71"/>
+        <source>Time to record! Post a video to share with your friends!</source>
+        <translation>Video yükleme zamanı! Video yükle ve arkadaşlarınla paylaş!</translation>
     </message>
 </context>
 <context>
@@ -29,17 +39,17 @@
     <message>
         <location filename="../../loginpage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="63"/>
         <source>Log in to your account:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesabına giriş yap:</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="94"/>
         <source>E-Mail:</source>
-        <translation type="unfinished"></translation>
+        <translation>E-Mail:</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="107"/>
@@ -50,28 +60,28 @@
     <message>
         <location filename="../../loginpage.ui" line="127"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre:</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="172"/>
         <location filename="../../loginpage.ui" line="178"/>
         <source>Log in</source>
-        <translation type="unfinished"></translation>
+        <translation>Giriş yap</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="191"/>
         <source>Not a user? Register</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı değil misin? Kayıt ol</translation>
     </message>
     <message>
         <location filename="../../loginpage.cpp" line="53"/>
         <source>Login Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Giriş yapılamadı</translation>
     </message>
     <message>
         <location filename="../../loginpage.cpp" line="53"/>
         <source>Incorrect email or password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yanlış email veya şifre.</translation>
     </message>
 </context>
 <context>
@@ -79,7 +89,7 @@
     <message>
         <location filename="../../mainwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>StaySimple</translation>
     </message>
 </context>
 <context>
@@ -87,27 +97,27 @@
     <message>
         <location filename="../../core/video/post.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="23"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="43"/>
         <source>DATE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="73"/>
         <source>like</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="80"/>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -115,42 +125,32 @@
     <message>
         <location filename="../../profilepage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="31"/>
-        <source>&amp;Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../profilepage.ui" line="70"/>
+        <location filename="../../profilepage.ui" line="58"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ayarlar</translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="107"/>
-        <source>Profile Picture</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../profilepage.ui" line="117"/>
-        <source>Name</source>
+        <location filename="../../profilepage.ui" line="84"/>
+        <source>[USERNAME]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="127"/>
-        <source>Username</source>
+        <location filename="../../profilepage.ui" line="97"/>
+        <source>[EMAIL]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="212"/>
-        <source>My &amp;Friends</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../profilepage.ui" line="123"/>
+        <source>My Friends:</source>
+        <translation>Arkadaşların:</translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="238"/>
-        <source>My &amp;Uploads</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../profilepage.ui" line="225"/>
+        <source>My Uploads</source>
+        <translation>Yüklemelerin</translation>
     </message>
 </context>
 <context>
@@ -158,100 +158,106 @@
     <message>
         <location filename="../../registerpage.ui" line="20"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="66"/>
         <source>Create Your Account:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesabını Oluştur:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="97"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı adı:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="104"/>
         <location filename="../../registerpage.ui" line="153"/>
         <location filename="../../registerpage.ui" line="170"/>
         <source>logRegInput</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="111"/>
         <source>Birthday:</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğum günü:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="130"/>
         <source>d/M/yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>d/M/yyyy</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="140"/>
         <source>E-Mail:</source>
-        <translation type="unfinished"></translation>
+        <translation>E-Mail:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="160"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="202"/>
         <source>Log in</source>
-        <translation type="unfinished"></translation>
+        <translation>Giriş yap</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="208"/>
         <source>Create My Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesabını Oluştur</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="58"/>
         <location filename="../../registerpage.cpp" line="62"/>
+        <location filename="../../registerpage.cpp" line="65"/>
         <location filename="../../registerpage.cpp" line="69"/>
         <location filename="../../registerpage.cpp" line="73"/>
         <location filename="../../registerpage.cpp" line="77"/>
         <location filename="../../registerpage.cpp" line="81"/>
         <location filename="../../registerpage.cpp" line="85"/>
         <source>Register Account Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="58"/>
         <source>Please fill in the missing information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen eksik olan detayları doldurun.</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="62"/>
         <source>You must be atleast 13 years old to create an account!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap oluşturmak icin en az 13 yaşında olmak gerekiyor!</translation>
+    </message>
+    <message>
+        <location filename="../../registerpage.cpp" line="65"/>
+        <source>Please enter a valid Email!</source>
+        <translation>Lütfen geçerli bir e-posta adresi girin!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="69"/>
         <source>Password must be atleast 8 characters long!</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre en az 8 karakterden oluşmalıdır!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="73"/>
         <source>Password must contain atleast one uppercase character!</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre en az bir büyük harf bulundurmalıdır!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="77"/>
         <source>Password must contain atleast one lowercase character!</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre en az bir küçük harf bulundurmalıdır!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="81"/>
         <source>Password must contain atleast one number!</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre en az bir sayı bulundurmalıdır!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="85"/>
         <source>Password must contain atleast one symbol!</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre en az bir sembol bulundurmalıdır!</translation>
     </message>
 </context>
 </TS>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../../homepage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../homepage.ui" line="46"/>
@@ -14,18 +14,24 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../../homepage.ui" line="56"/>
-        <source>2:00</source>
-        <translation>5:00</translation>
+        <location filename="../../homepage.ui" line="53"/>
+        <source>3:00</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../homepage.ui" line="92"/>
+        <location filename="../../homepage.ui" line="90"/>
         <source>Upload Video</source>
         <translation>Upload Video</translation>
     </message>
     <message>
+        <location filename="../../homepage.cpp" line="71"/>
+        <source>StaySimple</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../homepage.cpp" line="71"/>
         <source>Time to record! Post a video to share with your friends!</source>
-        <translation type="vanished">Time to record! Post a video to share with your friends!</translation>
+        <translation>Time to record! Post a video to share with your friends!</translation>
     </message>
 </context>
 <context>
@@ -33,7 +39,7 @@
     <message>
         <location filename="../../loginpage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="63"/>
@@ -91,27 +97,27 @@
     <message>
         <location filename="../../core/video/post.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="23"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="43"/>
         <source>DATE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="73"/>
         <source>like</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../core/video/post.ui" line="80"/>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -119,42 +125,32 @@
     <message>
         <location filename="../../profilepage.ui" line="14"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="31"/>
-        <source>&amp;Back</source>
-        <translation>&amp;Back</translation>
-    </message>
-    <message>
-        <location filename="../../profilepage.ui" line="70"/>
+        <location filename="../../profilepage.ui" line="58"/>
         <source>&amp;Settings</source>
         <translation>&amp;Settings</translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="107"/>
-        <source>Profile Picture</source>
-        <translation>Profile Picture</translation>
-    </message>
-    <message>
-        <location filename="../../profilepage.ui" line="117"/>
-        <source>Name</source>
+        <location filename="../../profilepage.ui" line="84"/>
+        <source>[USERNAME]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="127"/>
-        <source>Username</source>
+        <location filename="../../profilepage.ui" line="97"/>
+        <source>[EMAIL]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="212"/>
-        <source>My &amp;Friends</source>
-        <translation>My &amp;Friends</translation>
+        <location filename="../../profilepage.ui" line="123"/>
+        <source>My Friends:</source>
+        <translation>My Friends:</translation>
     </message>
     <message>
-        <location filename="../../profilepage.ui" line="238"/>
-        <source>My &amp;Uploads</source>
-        <translation>My &amp;Uploads</translation>
+        <location filename="../../profilepage.ui" line="225"/>
+        <source>My Uploads</source>
+        <translation>My Uploads</translation>
     </message>
 </context>
 <context>
@@ -162,7 +158,7 @@
     <message>
         <location filename="../../registerpage.ui" line="20"/>
         <source>Form</source>
-        <translation>StaySimple</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="66"/>
@@ -179,12 +175,12 @@
         <location filename="../../registerpage.ui" line="153"/>
         <location filename="../../registerpage.ui" line="170"/>
         <source>logRegInput</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="111"/>
         <source>Birthday:</source>
-        <translation type="unfinished"></translation>
+        <translation>Birthday:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="130"/>
@@ -194,68 +190,74 @@
     <message>
         <location filename="../../registerpage.ui" line="140"/>
         <source>E-Mail:</source>
-        <translation type="unfinished">E-Mail:</translation>
+        <translation>E-Mail:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="160"/>
         <source>Password:</source>
-        <translation type="unfinished">Password:</translation>
+        <translation>Password:</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="202"/>
         <source>Log in</source>
-        <translation type="unfinished">Log in</translation>
+        <translation>Log in</translation>
     </message>
     <message>
         <location filename="../../registerpage.ui" line="208"/>
         <source>Create My Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Create My Account</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="58"/>
         <location filename="../../registerpage.cpp" line="62"/>
+        <location filename="../../registerpage.cpp" line="65"/>
         <location filename="../../registerpage.cpp" line="69"/>
         <location filename="../../registerpage.cpp" line="73"/>
         <location filename="../../registerpage.cpp" line="77"/>
         <location filename="../../registerpage.cpp" line="81"/>
         <location filename="../../registerpage.cpp" line="85"/>
         <source>Register Account Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Register Account Failed</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="58"/>
         <source>Please fill in the missing information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Please fill in the missing information.</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="62"/>
         <source>You must be atleast 13 years old to create an account!</source>
-        <translation type="unfinished"></translation>
+        <translation>You must be atleast 13 years old to create an account!</translation>
+    </message>
+    <message>
+        <location filename="../../registerpage.cpp" line="65"/>
+        <source>Please enter a valid Email!</source>
+        <translation>Please enter a valid Email!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="69"/>
         <source>Password must be atleast 8 characters long!</source>
-        <translation type="unfinished"></translation>
+        <translation>Password must be atleast 8 characters long!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="73"/>
         <source>Password must contain atleast one uppercase character!</source>
-        <translation type="unfinished"></translation>
+        <translation>Password must contain atleast one uppercase character!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="77"/>
         <source>Password must contain atleast one lowercase character!</source>
-        <translation type="unfinished"></translation>
+        <translation>Password must contain atleast one lowercase character!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="81"/>
         <source>Password must contain atleast one number!</source>
-        <translation type="unfinished"></translation>
+        <translation>Password must contain atleast one number!</translation>
     </message>
     <message>
         <location filename="../../registerpage.cpp" line="85"/>
         <source>Password must contain atleast one symbol!</source>
-        <translation type="unfinished"></translation>
+        <translation>Password must contain atleast one symbol!</translation>
     </message>
 </context>
 </TS>

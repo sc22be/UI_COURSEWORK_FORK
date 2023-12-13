@@ -9,9 +9,9 @@
         <file>assets/button_images/likeButtonOff.jpg</file>
         <file>assets/button_images/likeButtonOn.jpg</file>
         <file>assets/button_images/commentsButton.jpg</file>
+        <file>assets/button_images/new_user.jpg</file>
         <file>assets/translations/staysimple_en_GB.qm</file>
         <file>assets/translations/staysimple_en_US.qm</file>
         <file>assets/translations/staysimple_tr.qm</file>
-        <file>assets/button_images/new_user.jpg</file>
     </qresource>
 </RCC>
