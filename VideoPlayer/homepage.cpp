@@ -62,7 +62,7 @@ void HomePage::UploadButtonClicked()
 {
     // for now, just display videos straight away
 
-    // TODO: dialog box saying "u uploaded a video"
+    QMessageBox::information(nullptr, "Upload video", "This would open a page where you record a video. Pretend that you uploaded a video");
 
     ui->sw_Posts->setCurrentIndex(1);
     SetupPostsOnSuccessfulLogin();
