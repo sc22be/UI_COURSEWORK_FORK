@@ -48,6 +48,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 
     // Delete the posts when we change page
     connect(p_MainWindow, SIGNAL(PageChange(MainWindow::PageIndex,MainWindow::PageIndex)), this, SLOT(PageChanged(MainWindow::PageIndex,MainWindow::PageIndex)));
+
+    // Translate
+    connect(p_MainWindow, &MainWindow::langChange, this, &HomePage::ChangeLang);
 }
 
 HomePage::~HomePage()

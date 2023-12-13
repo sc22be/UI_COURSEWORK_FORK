@@ -21,7 +21,7 @@
     <message>
         <location filename="../../homepage.ui" line="95"/>
         <source>Upload a video to see your friends&apos; posts</source>
-        <translation type="unfinished"></translation>
+        <translation>Upload a video to see your friends&apos; posts</translation>
     </message>
     <message>
         <location filename="../../homepage.ui" line="105"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../../homepage.cpp" line="66"/>
         <source>Upload video</source>
-        <translation type="unfinished"></translation>
+        <translation>Upload Video</translation>
     </message>
     <message>
         <location filename="../../homepage.cpp" line="66"/>
         <source>This would open a page where you record a video. Pretend that you uploaded a video</source>
-        <translation type="unfinished"></translation>
+        <translation>This would open a page where you record a video. Pretend that you uploaded a video</translation>
     </message>
     <message>
         <location filename="../../homepage.cpp" line="160"/>
@@ -59,17 +59,17 @@
     <message>
         <location filename="../../loginpage.ui" line="58"/>
         <source>English (GB)</source>
-        <translation type="unfinished"></translation>
+        <translation>English (GB)</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="63"/>
         <source>English (US)</source>
-        <translation type="unfinished"></translation>
+        <translation>English (US)</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="68"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <location filename="../../loginpage.ui" line="116"/>
@@ -285,99 +285,99 @@
     <message>
         <location filename="../../settingspage.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>StaySimple</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="60"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="80"/>
         <source>Notifications:</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifications:</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="94"/>
         <location filename="../../settingspage.ui" line="159"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Yes</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="99"/>
         <location filename="../../settingspage.ui" line="164"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="107"/>
         <source>Font Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Font Size:</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="121"/>
         <source>Small</source>
-        <translation type="unfinished"></translation>
+        <translation>Small</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="126"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Medium</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="131"/>
         <source>Large</source>
-        <translation type="unfinished"></translation>
+        <translation>Large</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="139"/>
         <source>Auto-Play Videos:</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto-Play Videos:</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="172"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Language:</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="192"/>
         <source>English (GB)</source>
-        <translation type="unfinished"></translation>
+        <translation>English (GB)</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="197"/>
         <source>English (US)</source>
-        <translation type="unfinished"></translation>
+        <translation>English (US)</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="202"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="234"/>
         <source>Profile &amp; Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Profile &amp; Support</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="244"/>
         <source>How-To</source>
-        <translation type="unfinished"></translation>
+        <translation>How-To</translation>
     </message>
     <message>
         <location filename="../../settingspage.ui" line="251"/>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Logout</translation>
     </message>
     <message>
         <location filename="../../settingspage.cpp" line="83"/>
         <source>StaySimple</source>
-        <translation type="unfinished"></translation>
+        <translation>StaySimple</translation>
     </message>
     <message>
         <location filename="../../settingspage.cpp" line="83"/>
         <source>To use the app, wait for a notification to post a video. Once this occurs you have 3 minutes to upload a video and can see your friends videos once you upload.</source>
-        <translation type="unfinished"></translation>
+        <translation>To use the app, wait for a notification to post a video. Once this occurs you have 3 minutes to upload a video and can see your friends videos once you upload.</translation>
     </message>
 </context>
 </TS>
