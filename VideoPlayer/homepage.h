@@ -21,14 +21,19 @@ public:
 
 public slots:
     void ProfileButtonClicked();
+    void UploadButtonClicked();
     void SetupPostsOnSuccessfulLogin();
 
 private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
     countdown timer;
+
+    // Resize posts when screen is resized
+    void ResizePosts();
 public:
 
+    void resizeEvent(QResizeEvent* e) override;
     virtual void OnPageEnter() override;
 };
 

@@ -10,6 +10,7 @@
 #include "core/countdown.h"
 #include <QDebug>
 #include <QMessageBox>
+#include <QResizeEvent>
 #include "core/application.h"
 
 /**
@@ -25,30 +26,12 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 {
     ui->setupUi(this);
 
-    // Muhammad has added the following
-
-    // get the user by calling:
-//    User *user = Application::instance()->GetCore()->GetUser();
-
-    // Begin to set up posts
-//    SetupPostsOnSuccessfulLogin();
-
-    // u can use ui->scrollArea to get the ScrollArea btw.
-//     ui->scrollAreaForPosts.
-
-
-//    if (scrollAreaForPosts)
-//    {
-//        setupPosts(scrollAreaForPosts, user)
-//    }
-
-
-    // End of addition
     // Connect to profile page
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
 
-    // Display posts
-    SetupPostsOnSuccessfulLogin();
+    // Connect upload video button
+    connect(ui->button_UploadVideo, &QPushButton::clicked, this, &HomePage::UploadButtonClicked);
+
     // Label for timer
     QLabel* timerLabel = ui->label_Timer;
     ui->label_Timer->hide();
@@ -61,16 +44,6 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     QObject::connect(&timer, &countdown::timerColorChange, [timerLabel](const QString& style)
     {
         timerLabel->setStyleSheet(style);
-    });
-    // On screen change
-    QObject::connect(p_MainWindow, &MainWindow::pageChange, [this](const int pageIndex)
-    {
-        if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
-        {
-            this->ui->label_Timer->show();
-            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
-            timer.StartCountdown(180); // In seconds
-        }
     });
 }
 
@@ -85,34 +58,80 @@ void HomePage::ProfileButtonClicked()
     p_MainWindow->ChangePage(MainWindow::PageIndex::PROFILE_PAGE);
 }
 
+void HomePage::UploadButtonClicked()
+{
+    QMessageBox::information(nullptr, "Upload video", "This would open a page where you record a video. Pretend that you uploaded a video");
+    ui->sw_Posts->setCurrentIndex(1);
+    SetupPostsOnSuccessfulLogin();
+}
+
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
-    std::cout << "Homepage enter" << std::endl;
-
-    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
+    std::cout << "Creating video players" << std::endl;
 
     Core* core = Application::instance()->GetCore();
-
-//void HomePage::setupPosts()
-//{
-//    // TODO: retrieve posts by video
 
     // Retrieve videos
     std::vector<Video> videos = core->GetVideoDB()->GetVideos();
 
-    // Add all the videos to the scroll view
-    // for (auto& video : videos)
-    // {
-    //     Post* post = new Post(nullptr, core->GetUser(), &video);
-    //     ui->w_PostsWidget->layout()->addWidget(post);
-    // }
+    // Get friends list
+    auto frens = core->GetUser()->GetFriends();
+    int size = frens.size();
 
-    // FOR TESTING, DISPLAYING 1 VIDEO ONLY
-    Post* post = new Post(nullptr, core->GetUser(), &videos[3]);
-    ui->w_PostsWidget->layout()->addWidget(post);
+    // Add all the videos to the scroll view
+    int i = 0;
+    for (auto& video : videos)
+    {
+        Post* post = new Post(nullptr, frens[i % size], &video);
+        ui->w_PostsWidget->layout()->addWidget(post);
+        post->show();
+
+        i++;
+    }
+
+    // Make the posts correct size
+    ResizePosts();
+}
+
+void HomePage::ResizePosts()
+{
+    int total_height = 0;
+    QLayout* layout = ui->w_PostsWidget->layout();
+    for (int i = 0; i < layout->count(); i++)
+    {
+        // Set post max size
+        QWidget* post = layout->itemAt(i)->widget();
+
+        post->setMinimumWidth(ui->scrollArea->width() - 50);
+        post->setMinimumHeight(ui->scrollArea->height());
+
+        total_height += post->height();
+    }
+
+    // Resize posts' parent widget to get scroll working
+    ui->w_PostsWidget->resize(ui->w_Videos->width(), total_height);
+}
+
+void HomePage::resizeEvent(QResizeEvent *e)
+{
+    ResizePosts();
 }
 
 void HomePage::OnPageEnter()
 {
     std::cout << "Homepage enter" << std::endl;
+
+    // Display correct username
+    ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
+
+    ui->label_Timer->show();
+
+    static bool first_time = true;
+    if (first_time)
+    {
+        QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+        first_time = false;
+    }
+
+    timer.StartCountdown(180); // In seconds
 }
