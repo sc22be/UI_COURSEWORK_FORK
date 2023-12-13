@@ -105,8 +105,8 @@ void HomePage::ResizePosts()
         // Set post max size
         QWidget* post = layout->itemAt(i)->widget();
 
-        post->setMaximumWidth(ui->scrollArea->width() - 50);
-        post->setMaximumHeight(ui->scrollArea->height());
+        post->setMinimumWidth(ui->scrollArea->width() - 50);
+        post->setMinimumHeight(ui->scrollArea->height());
 
         total_height += post->height();
     }
