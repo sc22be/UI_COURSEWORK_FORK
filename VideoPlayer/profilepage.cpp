@@ -16,7 +16,9 @@ ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
 {
     ui->setupUi(this);
 
-    connect(ui->backButton, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
+    // Connect buttons
+    connect(ui->button_Back, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
+    connect(ui->button_Settings, &QPushButton::clicked, this, &ProfilePage::SettingsButtonClicked);
 }
 
 ProfilePage::~ProfilePage()
@@ -27,6 +29,11 @@ ProfilePage::~ProfilePage()
 void ProfilePage::HomeButtonClicked()
 {
     p_MainWindow->ChangePage(MainWindow::PageIndex::HOME_PAGE);
+}
+
+void ProfilePage::SettingsButtonClicked()
+{
+    p_MainWindow->ChangePage(MainWindow::PageIndex::SETTINGS_PAGE);
 }
 
 void ProfilePage::OnPageEnter()

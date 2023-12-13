@@ -18,7 +18,7 @@
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="backButton">
+       <widget class="QPushButton" name="button_Back">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -47,7 +47,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="viewSettingsButton">
+       <widget class="QPushButton" name="button_Settings">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>

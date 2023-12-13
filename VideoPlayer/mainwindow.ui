@@ -32,6 +32,9 @@
       <widget class="QWidget" name="RegisterPage">
        <layout class="QVBoxLayout" name="verticalLayout_3"/>
       </widget>
+      <widget class="QWidget" name="SettingsPage">
+       <layout class="QVBoxLayout" name="verticalLayout_5"/>
+      </widget>
      </widget>
     </item>
    </layout>

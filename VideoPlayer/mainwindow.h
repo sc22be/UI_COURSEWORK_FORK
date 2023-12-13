@@ -14,6 +14,7 @@ class HomePage;
 class ProfilePage;
 class WelcomePage;
 class RegisterPage;
+class SettingsPage;
 class Page;
 
 QT_BEGIN_NAMESPACE
@@ -38,6 +39,7 @@ public:
         LOGIN_PAGE = 1,
         PROFILE_PAGE = 2,
         REGISTER_PAGE = 3,
+        SETTINGS_PAGE = 4,
         NUM_PAGES
     };
 
@@ -56,6 +58,7 @@ private:
     HomePage* p_HomePage;
     ProfilePage* p_ProfilePage;
     RegisterPage* p_RegisterPage;
+    SettingsPage* p_SettingsPage;
 
 };
 #endif // MAINWINDOW_H
