@@ -5,8 +5,11 @@
 #include "homepage.h"
 #include "profilepage.h"
 #include "registerpage.h"
+#include "settingspage.h"
 
 #include <QPushButton>
+#include <QLabel>
+#include <QObject>
 
 /**
  * @author Mustafa Yozgyur
@@ -39,6 +42,11 @@ MainWindow::MainWindow(QWidget *parent)
     p_RegisterPage = new RegisterPage(nullptr, this);
     ui->RegisterPage->layout()->addWidget(p_RegisterPage);
     p_RegisterPage->show();
+
+    // Instance Settings page
+    p_SettingsPage = new SettingsPage(nullptr, this);
+    ui->SettingsPage->layout()->addWidget(p_SettingsPage);
+    p_SettingsPage->show();
 }
 
 MainWindow::~MainWindow()
@@ -73,6 +81,11 @@ void MainWindow::ChangePage(PageIndex page)
             break;
         }
 
+        case SETTINGS_PAGE: {
+            p_SettingsPage->OnPageEnter();
+            break;
+        }
+
         default: {}
     }
 
@@ -84,4 +97,23 @@ void MainWindow::ChangePage(PageIndex page)
     */
 
     emit pageChange(page);
+}
+
+void MainWindow::ChangeLang(QString lang)
+{
+    if (lang == "English (GB)")
+    {
+        translator.load(":/assets/translations/staysimple_en_GB.qm");
+    }
+    else if (lang == "English (US)")
+    {
+        translator.load(":/assets/translations/staysimple_en_US.qm");
+    }
+    else if (lang == "Turkish")
+    {
+        translator.load(":/assets/translations/staysimple_tr.qm");
+    }
+
+    QCoreApplication::installTranslator(&translator);
+    emit langChange();
 }

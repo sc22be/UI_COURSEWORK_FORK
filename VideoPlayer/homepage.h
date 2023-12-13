@@ -28,6 +28,7 @@ private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
     countdown timer;
+    void ChangeLang();
 
     // Resize posts when screen is resized
     void ResizePosts();

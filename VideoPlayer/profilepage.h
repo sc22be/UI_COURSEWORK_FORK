@@ -27,10 +27,13 @@ public:
 public slots:
 
     void HomeButtonClicked();
+    void SettingsButtonClicked();
 
 private:
     MainWindow* p_MainWindow;
     Ui::ProfilePage* ui;
+    void ChangeLang();
+
 public:
     virtual void OnPageEnter() override;
 };

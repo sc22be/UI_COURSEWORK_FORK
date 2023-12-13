@@ -23,7 +23,8 @@ SOURCES += \
     mainwindow.cpp \
     page.cpp \
     profilepage.cpp \
-    registerpage.cpp
+    registerpage.cpp \
+    settingspage.cpp
 
 HEADERS += \
     core/application.h \
@@ -39,7 +40,8 @@ HEADERS += \
     mainwindow.h \
     page.h \
     profilepage.h \
-    registerpage.h
+    registerpage.h \
+    settingspage.h
 
 FORMS += \
     core/video/post.ui \
@@ -47,7 +49,8 @@ FORMS += \
     loginpage.ui \
     mainwindow.ui \
     profilepage.ui \
-    registerpage.ui
+    registerpage.ui \
+    settingspage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -60,3 +63,7 @@ DISTFILES += \
 
 RESOURCES += \
     VideoPlayer.qrc
+
+TRANSLATIONS = assets/translations/staysimple_en_US.ts \
+    assets/translations/staysimple_tr.ts \
+    assets/translations/staysimple_en_GB.ts

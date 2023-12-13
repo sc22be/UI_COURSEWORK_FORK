@@ -135,3 +135,8 @@ void HomePage::OnPageEnter()
 
     timer.StartCountdown(180); // In seconds
 }
+
+void HomePage::ChangeLang()
+{
+    ui->retranslateUi(this);
+}
