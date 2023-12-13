@@ -158,13 +158,16 @@ void HomePage::OnPageEnter()
     ui->label_Timer->show();
 
     static bool first_time = true;
-    if (first_time && core->GetSettings()->shouldNotify)
+    if (first_time)
     {
-        QMessageBox::information(this, tr("StaySimple"), tr("Time to record! Post a video to share with your friends!"));
+        if (core->GetSettings()->shouldNotify)
+        {
+            QMessageBox::information(this, tr("StaySimple"), tr("Time to record! Post a video to share with your friends!"));
+        }
+
+        timer.StartCountdown(180); // In seconds
         first_time = false;
     }
-
-    timer.StartCountdown(180); // In seconds
 
     // Display posts if user uploaded
     if (b_UploadedVideo)
