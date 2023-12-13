@@ -78,13 +78,6 @@ bool Core::SubmitLogin(std::string email, std::string password)
     }
     else
     {
-        // For dev only, REMOVE BEFORE PRODUCTION
-        if(email.empty() && password.empty())
-        {
-            return true;
-        }
-        // For dev only, REMOVE BEFORE PRODUCTION
-
         return false;
     }
 }
