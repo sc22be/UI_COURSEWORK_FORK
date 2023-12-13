@@ -60,10 +60,7 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::UploadButtonClicked()
 {
-    // for now, just display videos straight away
-
     QMessageBox::information(nullptr, "Upload video", "This would open a page where you record a video. Pretend that you uploaded a video");
-
     ui->sw_Posts->setCurrentIndex(1);
     SetupPostsOnSuccessfulLogin();
 }
@@ -128,6 +125,13 @@ void HomePage::OnPageEnter()
     ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
 
     ui->label_Timer->show();
-    QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+
+    static bool first_time = true;
+    if (first_time)
+    {
+        QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+        first_time = false;
+    }
+
     timer.StartCountdown(180); // In seconds
 }
