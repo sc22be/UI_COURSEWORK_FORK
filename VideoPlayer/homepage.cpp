@@ -67,9 +67,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     {
         if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
         {
-            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
             this->ui->label_Timer->show();
-            timer.StartCountdown(120); // In seconds
+            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+            timer.StartCountdown(180); // In seconds
         }
     });
 }

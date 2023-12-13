@@ -32,7 +32,7 @@ private:
     MainWindow* p_MainWindow;
     Ui::ProfilePage* ui;
 public:
-    virtual void OnPageEnter() override {}
+    virtual void OnPageEnter() override;
 };
 
 #endif // PROFILEPAGE_H
