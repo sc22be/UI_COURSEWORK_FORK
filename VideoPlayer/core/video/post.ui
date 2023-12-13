@@ -70,14 +70,24 @@
       <item>
        <widget class="QPushButton" name="button_Like">
         <property name="text">
-         <string>like</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <activeoff>:/assets/button_images/likeButtonOff.jpg</activeoff>
+          <activeon>:/assets/button_images/likeButtonOn.jpg</activeon>
+         </iconset>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="button_Comment">
         <property name="text">
-         <string>PushButton</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../VideoPlayer.qrc">
+          <normaloff>:/assets/button_images/commentsButton.jpg</normaloff>:/assets/button_images/commentsButton.jpg</iconset>
         </property>
        </widget>
       </item>
@@ -94,6 +104,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../VideoPlayer.qrc"/>
+ </resources>
  <connections/>
 </ui>
