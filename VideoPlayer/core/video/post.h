@@ -30,8 +30,11 @@ public slots:
     // Post slots
     void UpdateDuration(qint64 duration);
     void UpdatePosition(qint64 position);
-    void MediaStatusChanged(QMediaPlayer::MediaStatus status);
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void MediaStateChanged(QMediaPlayer::MediaStatus status);
+    #else
     void MediaStateChanged(QMediaPlayer::State state);
+    #endif
     void MediaPlayerError(QMediaPlayer::Error e);
     void SetPosition(int position);
     void ChangeLikeButtonStatus();

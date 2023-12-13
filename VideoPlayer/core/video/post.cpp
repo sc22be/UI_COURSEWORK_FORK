@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <QtMultimedia/QMediaPlayer>
+#include <QMediaPlayer>
 
 Post::Post(QWidget *parent, User* user, Video* video)
     : QWidget(parent)
@@ -17,8 +18,12 @@ Post::Post(QWidget *parent, User* user, Video* video)
     connect(ui->slider_Slider, SIGNAL(valueChanged(int)), this, SLOT(SetPosition(int)));
     connect(&m_MediaPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(UpdateDuration(qint64)));
     connect(&m_MediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(UpdatePosition(qint64)));
-    connect(&m_MediaPlayer, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)), this, SLOT(MediaStatusChanged(QMediaPlayer::MediaStatus)));
+
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    connect(&m_MediaPlayer, SIGNAL(stateChanged(QMediaPlayer::MediaStatus)), this, SLOT(MediaStateChanged(QMediaPlayer::MediaStatus)));
+    #else
     connect(&m_MediaPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(MediaStateChanged(QMediaPlayer::State)));
+    #endif
     connect(&m_MediaPlayer, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(MediaPlayerError(QMediaPlayer::Error)));
 
     // Connect like button
@@ -55,14 +60,31 @@ void Post::UpdatePosition(qint64 position)
     ui->slider_Slider->setValue(static_cast<int>(position));
 }
 
-void Post::MediaStatusChanged(QMediaPlayer::MediaStatus status)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void Post::MediaStateChanged(QMediaPlayer::MediaStatus status)
 {
-    if (status == QMediaPlayer::MediaStatus::LoadedMedia)
+    switch (status)
     {
-        // m_MediaPlayer.play();
+    case (QMediaPlayer::StoppedState) :
+    {
+        ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/play_button.jpg)");
+        break;
+    }
+
+    case (QMediaPlayer::PlayingState) :
+    {
+        ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/pause_button.jpg)");
+        break;
+    }
+
+    case (QMediaPlayer::PausedState) :
+    {
+        ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/play_button.jpg)");
+        break;
+    }
     }
 }
-
+#else
 void Post::MediaStateChanged(QMediaPlayer::State state)
 {
     switch (state)
@@ -86,7 +108,7 @@ void Post::MediaStateChanged(QMediaPlayer::State state)
         }
     }
 }
-
+#endif
 void Post::MediaPlayerError(QMediaPlayer::Error e)
 {
     std::cout << "ERROR: " << e << std::endl;
@@ -114,6 +136,30 @@ void Post::ChangeLikeButtonStatus()
 
 void Post::PlayPauseClicked()
 {
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    switch (m_MediaPlayer.mediaStatus())
+    {
+    case (QMediaPlayer::PlayingState) : {
+        std::cout << "pausing" << std::endl;
+        m_MediaPlayer.pause();
+        break;
+    }
+
+    case (QMediaPlayer::PausedState) : {
+        std::cout << "playing" << std::endl;
+        m_MediaPlayer.play();
+        break;
+    }
+
+    case (QMediaPlayer::StoppedState) : {
+        // restart video
+        std::cout << "re playing" << std::endl;
+        m_MediaPlayer.setPosition(0);
+        m_MediaPlayer.play();
+        break;
+    }
+    }
+    #else
     switch (m_MediaPlayer.state())
     {
         case (QMediaPlayer::State::PlayingState) : {
@@ -136,4 +182,5 @@ void Post::PlayPauseClicked()
             break;
         }
     }
+    #endif
 }
