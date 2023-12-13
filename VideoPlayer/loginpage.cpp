@@ -50,7 +50,7 @@ void LoginPage::LoginButtonClicked()
     else
     {
         // Pop up to say password incorrect
-        QMessageBox::critical(this, "Login Failed", "Incorrect email or password.");
+        QMessageBox::critical(this, tr("Login Failed"), tr("Incorrect email or password."));
     }
 }
 

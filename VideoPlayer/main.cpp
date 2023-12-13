@@ -1,14 +1,16 @@
 #include "mainwindow.h"
 
-#include "core/countdown.h"
 #include "core/application.h"
 #include <QFile>
-#include <iostream>
+#include <QLocale>
 #include <QString>
+#include <QTranslator>
+#include <QDir>
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
+ * @author Brent Edington
 */
 
 int main(int argc, char *argv[])
@@ -25,6 +27,15 @@ int main(int argc, char *argv[])
     QString style_sheet = QLatin1String(file.readAll());
     file.close();
     a.setStyleSheet(style_sheet);
+
+    // Translator
+    QTranslator translator;
+    QString translationFile = ":/assets/translations/staysimple_en_US.qm";
+    if (QFile::exists(translationFile))
+    {
+        translator.load(translationFile);
+    }
+    a.installTranslator(&translator);
 
     MainWindow w(nullptr);
     w.show();
