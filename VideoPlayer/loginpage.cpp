@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <QMessageBox>
+#include <QTranslator>
 
 /**
  * @author Mustafa Yozgyur
@@ -24,8 +25,11 @@ LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)
     // Connect button
     connect(ui->button_Login, &QPushButton::clicked, this, &LoginPage::LoginButtonClicked);
     connect(ui->button_Register, &QPushButton::clicked, this, &LoginPage::RegisterButtonClicked);
-}
 
+    // Connect language
+    connect(ui->langBox, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &LoginPage::OnLangChange);
+    connect(p_MainWindow, &MainWindow::langChange, this, &LoginPage::ChangeLang);
+}
 LoginPage::~LoginPage()
 {
     delete ui;
@@ -50,7 +54,7 @@ void LoginPage::LoginButtonClicked()
     else
     {
         // Pop up to say password incorrect
-        QMessageBox::critical(this, "Login Failed", "Incorrect email or password.");
+        QMessageBox::critical(this, tr("Login Failed"), tr("Incorrect email or password."));
     }
 }
 
@@ -58,4 +62,17 @@ void LoginPage::RegisterButtonClicked()
 {
     // Go to register page
     p_MainWindow->ChangePage(MainWindow::PageIndex::REGISTER_PAGE);
+}
+
+void LoginPage::OnLangChange(int index)
+{
+    Q_UNUSED(index);
+
+    QString selectedLang = ui->langBox->currentText();
+    p_MainWindow->ChangeLang(selectedLang);
+}
+
+void LoginPage::ChangeLang()
+{
+    ui->retranslateUi(this);
 }
