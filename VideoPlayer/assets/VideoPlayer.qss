@@ -22,7 +22,6 @@ Theme for stacked widget in home screen
 QStackedWidget[objectName="sw_Posts"]
 {
     border: 1px solid white;
-    border-radius: 15px;
 }
 
 /*
