@@ -27,6 +27,7 @@ public:
 public slots:
 
     void HomeButtonClicked();
+    void SettingsButtonClicked();
 
 private:
     MainWindow* p_MainWindow;
