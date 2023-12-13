@@ -17,11 +17,15 @@ Post::Post(QWidget *parent, User* user, Video* video)
     connect(ui->slider_Slider, SIGNAL(valueChanged(int)), this, SLOT(SetPosition(int)));
     connect(&m_MediaPlayer, SIGNAL(durationChanged(qint64)), this, SLOT(UpdateDuration(qint64)));
     connect(&m_MediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(UpdatePosition(qint64)));
-    connect(&m_MediaPlayer, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)), this, SLOT(MediaStateChanged(QMediaPlayer::MediaStatus)));
+    connect(&m_MediaPlayer, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)), this, SLOT(MediaStatusChanged(QMediaPlayer::MediaStatus)));
+    connect(&m_MediaPlayer, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(MediaStateChanged(QMediaPlayer::State)));
     connect(&m_MediaPlayer, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(MediaPlayerError(QMediaPlayer::Error)));
 
     // Connect like button
     connect(ui->button_Like, SIGNAL(clicked()), this, SLOT(ChangeLikeButtonStatus()));
+
+    // Connect play pause button
+    connect(ui->button_PlayPause, SIGNAL(clicked()), this, SLOT(PlayPauseClicked()));
 
     // Setup media player
     #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -51,11 +55,35 @@ void Post::UpdatePosition(qint64 position)
     ui->slider_Slider->setValue(static_cast<int>(position));
 }
 
-void Post::MediaStateChanged(QMediaPlayer::MediaStatus status)
+void Post::MediaStatusChanged(QMediaPlayer::MediaStatus status)
 {
     if (status == QMediaPlayer::MediaStatus::LoadedMedia)
     {
-        m_MediaPlayer.play();
+        // m_MediaPlayer.play();
+    }
+}
+
+void Post::MediaStateChanged(QMediaPlayer::State state)
+{
+    switch (state)
+    {
+        case (QMediaPlayer::StoppedState) :
+        {
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/play_button.jpg)");
+            break;
+        }
+
+    case (QMediaPlayer::PlayingState) :
+        {
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/pause_button.jpg)");
+            break;
+        }
+
+    case (QMediaPlayer::PausedState) :
+        {
+            ui->button_PlayPause->setStyleSheet("border-image: url(:/assets/button_images/play_button.jpg)");
+            break;
+        }
     }
 }
 
@@ -81,5 +109,31 @@ void Post::ChangeLikeButtonStatus()
     {
         ui->button_Like->setIcon(QIcon(":/assets/button_images/likeButtonOff.jpg"));
         ui->button_Like->setCheckable(false);
+    }
+}
+
+void Post::PlayPauseClicked()
+{
+    switch (m_MediaPlayer.state())
+    {
+        case (QMediaPlayer::State::PlayingState) : {
+            std::cout << "pausing" << std::endl;
+            m_MediaPlayer.pause();
+            break;
+        }
+
+        case (QMediaPlayer::State::PausedState) : {
+            std::cout << "playing" << std::endl;
+            m_MediaPlayer.play();
+            break;
+        }
+
+        case (QMediaPlayer::State::StoppedState) : {
+            // restart video
+            std::cout << "re playing" << std::endl;
+            m_MediaPlayer.setPosition(0);
+            m_MediaPlayer.play();
+            break;
+        }
     }
 }
