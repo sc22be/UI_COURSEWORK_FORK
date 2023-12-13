@@ -72,6 +72,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
             timer.StartCountdown(180); // In seconds
         }
     });
+
+    // Language Change
+    connect(p_MainWindow, &MainWindow::langChange, this, &HomePage::ChangeLang);
 }
 
 HomePage::~HomePage()
@@ -115,4 +118,9 @@ void HomePage::SetupPostsOnSuccessfulLogin()
 void HomePage::OnPageEnter()
 {
     std::cout << "Homepage enter" << std::endl;
+}
+
+void HomePage::ChangeLang()
+{
+    ui->retranslateUi(this);
 }

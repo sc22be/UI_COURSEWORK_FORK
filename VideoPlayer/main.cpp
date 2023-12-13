@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     Application::instance()->InitialiseCore(argc, argv);
 
     QApplication a(argc, argv);
+    Application::setAppInstance(&a);
     a.setStyleSheet(":/VideoPlayer.qss");
 
     // Set global stylesheet
@@ -27,15 +28,6 @@ int main(int argc, char *argv[])
     QString style_sheet = QLatin1String(file.readAll());
     file.close();
     a.setStyleSheet(style_sheet);
-
-    // Translator
-    QTranslator translator;
-    QString translationFile = ":/assets/translations/staysimple_en_US.qm";
-    if (QFile::exists(translationFile))
-    {
-        translator.load(translationFile);
-    }
-    a.installTranslator(&translator);
 
     MainWindow w(nullptr);
     w.show();

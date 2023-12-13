@@ -27,6 +27,9 @@ RegisterPage::RegisterPage(QWidget *parent, MainWindow* main_window)
     QDate today = QDate::currentDate();
     QDate modTodaysDate = today.addYears(-13);
     ui->date_Birthday->setDate(modTodaysDate);
+
+    // Translate
+    connect(p_MainWindow, &MainWindow::langChange, this, &RegisterPage::ChangeLang);
 }
 
 RegisterPage::~RegisterPage()
@@ -88,3 +91,7 @@ void RegisterPage::RegisterButtonClicked()
 
 }
 
+void RegisterPage::ChangeLang()
+{
+    ui->retranslateUi(this);
+}

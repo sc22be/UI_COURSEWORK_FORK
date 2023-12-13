@@ -17,6 +17,10 @@ public:
     // Get instance
     static Application* instance();
 
+    // Get QT App
+    static QApplication* getAppInstance();
+    static void setAppInstance(QApplication* app);
+
     // Initialise core
     void InitialiseCore(int argc, char* argv[]);
 
@@ -26,6 +30,7 @@ private:
 
     Application();
     virtual ~Application();
+    static QApplication* m_appInstance;
 
     Core* m_Core = nullptr;
 

@@ -27,10 +27,12 @@ public:
 private slots:
     void LoginButtonClicked();
     void RegisterButtonClicked();
+    void OnLangChange(int index);
 
 private:
     MainWindow* p_MainWindow;
     Ui::LoginPage* ui;
+    void ChangeLang();
 
 public:
     virtual void OnPageEnter() override {};

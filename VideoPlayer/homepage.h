@@ -27,6 +27,8 @@ private:
     MainWindow* p_MainWindow;
     Ui::HomePage* ui;
     countdown timer;
+    void ChangeLang();
+
 public:
 
     virtual void OnPageEnter() override;

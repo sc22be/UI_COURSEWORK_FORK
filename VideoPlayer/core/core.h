@@ -8,6 +8,7 @@
 #include <array>
 #include <string>
 #include <QDateTime>
+#include <QTranslator>
 
 /**
  * @author Mustafa Yozgyur

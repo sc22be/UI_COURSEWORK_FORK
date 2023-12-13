@@ -7,6 +7,7 @@
 */
 
 #include <QMainWindow>
+#include <QTranslator>
 
 // Forward declare pages
 class LoginPage;
@@ -46,9 +47,11 @@ public:
      * @param page : PageIndex of what page to change to
     */
     void ChangePage(PageIndex page);
+    void ChangeLang(QString lang);
 
 signals:
     void pageChange(const int pageIndex);
+    void langChange();
 
 private:
     Ui::MainWindow *ui;
@@ -57,5 +60,6 @@ private:
     ProfilePage* p_ProfilePage;
     RegisterPage* p_RegisterPage;
 
+    QTranslator translator;
 };
 #endif // MAINWINDOW_H

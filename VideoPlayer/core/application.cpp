@@ -36,3 +36,14 @@ Application::~Application()
     // Free core
     delete m_Core;
 }
+
+// For QApplication
+QApplication* Application::m_appInstance = nullptr;
+
+QApplication* Application::getAppInstance() {
+    return m_appInstance;
+}
+
+void Application::setAppInstance(QApplication* app) {
+    m_appInstance = app;
+}

@@ -1,9 +1,12 @@
 #include "core.h"
+#include "application.h"
+#include "mainwindow.h"
 
 #include <QString>
 #include <iostream>
 #include <QDateTime>
 #include <regex>
+#include <QTranslator>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     #include <QRegularExpression>
 #else
