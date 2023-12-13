@@ -25,25 +25,6 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
 {
     ui->setupUi(this);
 
-    // Muhammad has added the following
-
-    // get the user by calling:
-//    User *user = Application::instance()->GetCore()->GetUser();
-
-    // Begin to set up posts
-//    SetupPostsOnSuccessfulLogin();
-
-    // u can use ui->scrollArea to get the ScrollArea btw.
-//     ui->scrollAreaForPosts.
-
-
-//    if (scrollAreaForPosts)
-//    {
-//        setupPosts(scrollAreaForPosts, user)
-//    }
-
-
-    // End of addition
     // Connect to profile page
     connect(ui->button_Profile, &QPushButton::clicked, this, &HomePage::ProfileButtonClicked);
 
