@@ -45,6 +45,9 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     {
         timerLabel->setStyleSheet(style);
     });
+
+    // Delete the posts when we change page
+    connect(p_MainWindow, SIGNAL(PageChange(MainWindow::PageIndex,MainWindow::PageIndex)), this, SLOT(PageChanged(MainWindow::PageIndex,MainWindow::PageIndex)));
 }
 
 HomePage::~HomePage()
@@ -63,6 +66,7 @@ void HomePage::UploadButtonClicked()
     QMessageBox::information(nullptr, "Upload video", "This would open a page where you record a video. Pretend that you uploaded a video");
     ui->sw_Posts->setCurrentIndex(1);
     SetupPostsOnSuccessfulLogin();
+    b_UploadedVideo = true;
 }
 
 void HomePage::SetupPostsOnSuccessfulLogin()
@@ -91,6 +95,29 @@ void HomePage::SetupPostsOnSuccessfulLogin()
 
     // Make the posts correct size
     ResizePosts();
+}
+
+void HomePage::PageChanged(MainWindow::PageIndex from, MainWindow::PageIndex to)
+{
+    // Make sure we are exiting the page
+    if (from != MainWindow::PageIndex::HOME_PAGE)
+    {
+        return;
+    }
+
+    QLayout* layout = ui->w_PostsWidget->layout();
+
+    int count = layout->count();
+
+    // Delete posts
+    for (int i = 0; i < count; i++)
+    {
+        // Set post max size
+        QWidget* post = layout->itemAt(0)->widget();
+
+        layout->removeWidget(post);
+        delete post;
+    }
 }
 
 void HomePage::ResizePosts()
@@ -134,6 +161,17 @@ void HomePage::OnPageEnter()
     }
 
     timer.StartCountdown(180); // In seconds
+
+    // Display posts if user uploaded
+    if (b_UploadedVideo)
+    {
+        SetupPostsOnSuccessfulLogin();
+    } else
+    {
+        // Show upload video button
+        ui->sw_Posts->setCurrentIndex(0);
+
+    }
 }
 
 void HomePage::ChangeLang()
