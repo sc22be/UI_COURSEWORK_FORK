@@ -62,16 +62,6 @@ HomePage::HomePage(QWidget *parent, MainWindow* main_window)
     {
         timerLabel->setStyleSheet(style);
     });
-    // On screen change
-    QObject::connect(p_MainWindow, &MainWindow::pageChange, [this](const int pageIndex)
-    {
-        if (pageIndex == 0 && timer.isFirst == true) //Index of homepage
-        {
-            this->ui->label_Timer->show();
-            QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
-            timer.StartCountdown(180); // In seconds
-        }
-    });
 }
 
 HomePage::~HomePage()
@@ -87,8 +77,6 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::SetupPostsOnSuccessfulLogin()
 {
-    std::cout << "Homepage enter" << std::endl;
-
     ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
 
     Core* core = Application::instance()->GetCore();
@@ -115,4 +103,8 @@ void HomePage::SetupPostsOnSuccessfulLogin()
 void HomePage::OnPageEnter()
 {
     std::cout << "Homepage enter" << std::endl;
+
+    ui->label_Timer->show();
+    QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+    timer.StartCountdown(180); // In seconds
 }
