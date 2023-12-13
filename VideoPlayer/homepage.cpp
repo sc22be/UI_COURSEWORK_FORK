@@ -77,12 +77,19 @@ void HomePage::SetupPostsOnSuccessfulLogin()
     // Retrieve videos
     std::vector<Video> videos = core->GetVideoDB()->GetVideos();
 
+    // Get friends list
+    auto frens = core->GetUser()->GetFriends();
+    int size = frens.size();
+
     // Add all the videos to the scroll view
+    int i = 0;
     for (auto& video : videos)
     {
-        Post* post = new Post(nullptr, core->GetUser(), &video);
+        Post* post = new Post(nullptr, frens[i % size], &video);
         ui->w_PostsWidget->layout()->addWidget(post);
         post->show();
+
+        i++;
     }
 
     // Make the posts correct size
