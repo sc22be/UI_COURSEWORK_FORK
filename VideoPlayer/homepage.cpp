@@ -6,12 +6,12 @@
 #include "core/videodb.h"
 #include "core/video/video.h"
 #include "core/video/post.h"
-#include <iostream>
+#include "core/settings.h"
 #include "core/countdown.h"
+#include <iostream>
 #include <QDebug>
 #include <QMessageBox>
 #include <QResizeEvent>
-#include "core/application.h"
 
 /**
  * @author Mustafa Yozgyur
@@ -60,7 +60,7 @@ void HomePage::ProfileButtonClicked()
 
 void HomePage::UploadButtonClicked()
 {
-    QMessageBox::information(nullptr, "Upload video", "This would open a page where you record a video. Pretend that you uploaded a video");
+    QMessageBox::information(nullptr, tr("Upload video"), tr("This would open a page where you record a video. Pretend that you uploaded a video"));
     ui->sw_Posts->setCurrentIndex(1);
     SetupPostsOnSuccessfulLogin();
 }
@@ -119,7 +119,8 @@ void HomePage::resizeEvent(QResizeEvent *e)
 
 void HomePage::OnPageEnter()
 {
-    std::cout << "Homepage enter" << std::endl;
+    // Get core
+    Core* core = Application::instance()->GetCore();
 
     // Display correct username
     ui->label_Username->setText(Application::instance()->GetCore()->GetUser()->GetUsername().c_str());
@@ -127,9 +128,9 @@ void HomePage::OnPageEnter()
     ui->label_Timer->show();
 
     static bool first_time = true;
-    if (first_time)
+    if (first_time && core->GetSettings()->shouldNotify)
     {
-        QMessageBox::information(this, "StaySimple", "Time to record! Post a video to share with your friends!");
+        QMessageBox::information(this, tr("StaySimple"), tr("Time to record! Post a video to share with your friends!"));
         first_time = false;
     }
 

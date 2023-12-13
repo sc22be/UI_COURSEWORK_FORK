@@ -3,6 +3,11 @@
 
 #include <QWidget>
 
+/**
+ * @author Brent Edington
+ * @@author Mustafa Yozgyur
+*/
+
 #include "page.h"
 
 class MainWindow;
@@ -21,10 +26,20 @@ public:
 
     virtual void OnPageEnter() override;
 
+private slots:
+    // Dropdowns
+    void OnNotifyChange(int index);
+    void OnLangChange(int index);
+    // Buttons
+    void ProfileButtonClicked();
+    void LogoutButtonClicked();
+    void HowtoClicked();
+
 private:
     Ui::SettingsPage *ui;
 
     MainWindow* p_MainWindow;
+    void ChangeLang();
 };
 
 #endif // SETTINGSPAGE_H

@@ -6,6 +6,7 @@ class Settings
 {
 public:
     Settings();
+    bool shouldNotify = true;
 };
 
 #endif // SETTINGS_H
