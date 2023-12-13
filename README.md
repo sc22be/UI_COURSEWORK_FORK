@@ -3,6 +3,17 @@ The project is to create a beReal spoof, but for videos.
 This code is a prototype for the final product. It has login, register, profile and home pages. The home page is where the user can see the videos they have uploaded and can upload new videos.
 
 ## Running the code:
+### Qt
+Install Qt Creator with Qt 5.15
+When running the code run from the file VideoPlayer.pro
+### Command Line Arguments
+In QT (once folder is open) go to projects, run, Command line arguments:
+```bash
+# Unix
+%{sourceDir}/../assets
+# Windows
+%{sourceDir}\..\assets
+```
 ### Codecs
 This project requires the gstreamer codecs to run as it uses the gstreamer library to play videos.
 #### macos:
@@ -15,10 +26,6 @@ zypper/dnf/pacman/apt install gstreamer
 ```
 #### Windows:
 No extra packages needed to run
-
-### Qt
-Install Qt Creator with Qt 5.15
-When running the code run from the file VideoPlayer.pro
 
 ## Contributing:
 - Kanban link: https://trello.com/b/F56Kiy3C/user-interfaces-board

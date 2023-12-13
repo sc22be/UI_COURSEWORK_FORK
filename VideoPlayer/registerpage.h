@@ -30,6 +30,8 @@ private slots:
 private:
     MainWindow* p_MainWindow;
     Ui::RegisterPage* ui;
+    void ChangeLang();
+
 public:
     virtual void OnPageEnter() override {}
 };

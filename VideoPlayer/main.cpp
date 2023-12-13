@@ -1,14 +1,16 @@
 #include "mainwindow.h"
 
-#include "core/countdown.h"
 #include "core/application.h"
 #include <QFile>
-#include <iostream>
+#include <QLocale>
 #include <QString>
+#include <QTranslator>
+#include <QDir>
 
 /**
  * @author Mustafa Yozgyur
  * @author Muhammad Kashif-Khan
+ * @author Brent Edington
 */
 
 int main(int argc, char *argv[])

@@ -17,6 +17,14 @@ QLabel
 }
 
 /*
+Theme for stacked widget in home screen
+*/
+QStackedWidget[objectName="sw_Posts"]
+{
+    border: 1px solid white;
+}
+
+/*
 Theme for title of the app
 */
 QLabel[objectName="title"]
@@ -60,7 +68,7 @@ QLineEdit
 
 QScrollArea
 {
-    border: 1px solid white;
+    border: none;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -75,4 +83,17 @@ QDateEdit
     border-radius: 15px;
     color: white;
     padding: 7px;
+}
+
+QComboBox
+{
+    font-size: 12px;
+    border: 1px solid white;
+    color: white;
+    padding: 2px;
+}
+
+QComboBox QAbstractItemView
+{
+    color: white;
 }

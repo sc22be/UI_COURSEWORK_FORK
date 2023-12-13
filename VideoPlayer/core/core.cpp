@@ -1,9 +1,12 @@
 #include "core.h"
+#include "application.h"
+#include "mainwindow.h"
 
 #include <QString>
 #include <iostream>
 #include <QDateTime>
 #include <regex>
+#include <QTranslator>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     #include <QRegularExpression>
 #else
@@ -28,14 +31,30 @@ Core::Core(const CoreArgs& args)
     m_User->SetEmail("test@test.com");
     m_User->SetPassword("password");
 
-    // Add friends to user : TODO
-    // m_User.AddFriend("@DynoAbd786");
-    // m_User.AddFriend("@Brek");
-    // m_User.AddFriend("@Gamer");
-    // m_User.AddFriend("@xSarahVictoria");
+    // Init user pool
+    m_Users[0] = User();
+    m_Users[0].SetUsername("Muhammad");
+    m_Users[0].SetEmail("muhammad@example.com");
+
+    m_Users[1] = User();
+    m_Users[1].SetUsername("Gamer");
+    m_Users[1].SetEmail("gamer@gamermail.com");
+
+    m_Users[2] = User();
+    m_Users[2].SetUsername("Sarah");
+    m_Users[2].SetEmail("sarah@example2.com");
+
+    // Add friends to user
+    m_User->AddFriend(&m_Users[0]);
+    m_User->AddFriend(&m_Users[1]);
+    m_User->AddFriend(&m_Users[2]);
 
     // Initialise video player
+#ifdef _WIN32
+    m_VideoDB = new VideoDB(m_AssetsPath.append("\\videos"));
+#else
     m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+#endif
 
     // Initialise settings
     m_Settings = new Settings();

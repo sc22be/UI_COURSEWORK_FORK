@@ -19,6 +19,8 @@ ProfilePage::ProfilePage(QWidget *parent, MainWindow* main_window)
     // Connect buttons
     connect(ui->button_Back, &QPushButton::clicked, this, &ProfilePage::HomeButtonClicked);
     connect(ui->button_Settings, &QPushButton::clicked, this, &ProfilePage::SettingsButtonClicked);
+    // Translate
+    connect(p_MainWindow, &MainWindow::langChange, this, &ProfilePage::ChangeLang);
 }
 
 ProfilePage::~ProfilePage()
@@ -41,4 +43,9 @@ void ProfilePage::OnPageEnter()
     Core* core = Application::instance()->GetCore();
     ui->label_Username->setText(core->GetUser()->GetUsername().c_str());
     ui->label_Email->setText(core->GetUser()->GetEmail().c_str());
+}
+
+void ProfilePage::ChangeLang()
+{
+    ui->retranslateUi(this);
 }

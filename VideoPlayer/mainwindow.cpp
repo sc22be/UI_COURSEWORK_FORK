@@ -8,6 +8,8 @@
 #include "settingspage.h"
 
 #include <QPushButton>
+#include <QLabel>
+#include <QObject>
 
 /**
  * @author Mustafa Yozgyur
@@ -95,4 +97,23 @@ void MainWindow::ChangePage(PageIndex page)
     */
 
     emit pageChange(page);
+}
+
+void MainWindow::ChangeLang(QString lang)
+{
+    if (lang == "English (GB)")
+    {
+        translator.load(":/assets/translations/staysimple_en_GB.qm");
+    }
+    else if (lang == "English (US)")
+    {
+        translator.load(":/assets/translations/staysimple_en_US.qm");
+    }
+    else if (lang == "Turkish")
+    {
+        translator.load(":/assets/translations/staysimple_tr.qm");
+    }
+
+    QCoreApplication::installTranslator(&translator);
+    emit langChange();
 }
