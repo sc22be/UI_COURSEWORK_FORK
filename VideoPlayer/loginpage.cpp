@@ -27,8 +27,10 @@ LoginPage::LoginPage(QWidget *parent, MainWindow* main_window)
     connect(ui->button_Register, &QPushButton::clicked, this, &LoginPage::RegisterButtonClicked);
 
     // Connect language
+    Core* core = Application::instance()->GetCore();
     connect(ui->langBox, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &LoginPage::OnLangChange);
     connect(p_MainWindow, &MainWindow::langChange, this, &LoginPage::ChangeLang);
+    ui->langBox->setCurrentIndex(core->GetSettings()->lang);
 }
 LoginPage::~LoginPage()
 {
@@ -66,13 +68,27 @@ void LoginPage::RegisterButtonClicked()
 
 void LoginPage::OnLangChange(int index)
 {
-    Q_UNUSED(index);
+    // Get core
+    Core* core = Application::instance()->GetCore();
 
     QString selectedLang = ui->langBox->currentText();
+    core->GetSettings()->lang = index;
     p_MainWindow->ChangeLang(selectedLang);
+}
+
+
+
+void LoginPage::OnPageEnter()
+{
+    ui->text_Email->clear();
+    ui->text_Password->clear();
 }
 
 void LoginPage::ChangeLang()
 {
+    // Change default
+    Core* core = Application::instance()->GetCore();
+    ui->langBox->setCurrentIndex(core->GetSettings()->lang);
+    // Reload
     ui->retranslateUi(this);
 }
