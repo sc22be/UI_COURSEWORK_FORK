@@ -29,22 +29,22 @@
         <translation>Upload Video</translation>
     </message>
     <message>
-        <location filename="../../homepage.cpp" line="63"/>
+        <location filename="../../homepage.cpp" line="66"/>
         <source>Upload video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../homepage.cpp" line="63"/>
+        <location filename="../../homepage.cpp" line="66"/>
         <source>This would open a page where you record a video. Pretend that you uploaded a video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../homepage.cpp" line="133"/>
+        <location filename="../../homepage.cpp" line="160"/>
         <source>StaySimple</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../homepage.cpp" line="133"/>
+        <location filename="../../homepage.cpp" line="160"/>
         <source>Time to record! Post a video to share with your friends!</source>
         <translation>Time to record! Post a video to share with your friends!</translation>
     </message>
@@ -104,12 +104,12 @@
         <translation>Not a user? Register</translation>
     </message>
     <message>
-        <location filename="../../loginpage.cpp" line="57"/>
+        <location filename="../../loginpage.cpp" line="59"/>
         <source>Login Failed</source>
         <translation>Login Failed</translation>
     </message>
     <message>
-        <location filename="../../loginpage.cpp" line="57"/>
+        <location filename="../../loginpage.cpp" line="59"/>
         <source>Incorrect email or password.</source>
         <translation>Incorrect email or password.</translation>
     </message>
@@ -370,12 +370,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../settingspage.cpp" line="77"/>
+        <location filename="../../settingspage.cpp" line="83"/>
         <source>StaySimple</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../settingspage.cpp" line="77"/>
+        <location filename="../../settingspage.cpp" line="83"/>
         <source>To use the app, wait for a notification to post a video. Once this occurs you have 3 minutes to upload a video and can see your friends videos once you upload.</source>
         <translation type="unfinished"></translation>
     </message>
