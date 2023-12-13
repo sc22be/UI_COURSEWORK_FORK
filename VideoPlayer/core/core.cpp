@@ -47,7 +47,11 @@ Core::Core(const CoreArgs& args)
     m_User->AddFriend(&m_Users[2]);
 
     // Initialise video player
+#ifdef _WIN32
+    m_VideoDB = new VideoDB(m_AssetsPath.append("\videos"));
+#else
     m_VideoDB = new VideoDB(m_AssetsPath.append("/videos"));
+#endif
 
     // Initialise settings
     m_Settings = new Settings();
